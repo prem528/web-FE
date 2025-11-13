@@ -3,6 +3,9 @@
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden text-white bg-[url('/square.svg')] bg-cover">
+      {/* <div className="bg-[url('/top-r.webp')]bg-cover"> */}
+
+
 
       {/* Floating stars / particles effect */}
       <div className="absolute inset-0"></div>
@@ -11,7 +14,7 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-0 py-24 md:py-36 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left text section */}
         <div className="max-w-2xl">
-          <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
+          <h1 className="text-5xl sm:text-6xl font-semibold leading-tight mb-6">
           Confident Parenting Starts with Smart Monitoring
   
            </h1>
@@ -21,16 +24,17 @@ export default function HeroSection() {
           </p>         
         </div>
 
-        {/* Right image / illustration */}
-        <div className="relative">
+        {/* Right image */}
+        <div className="relative py-10">
           <img
-            src="/signupbg011.png"
+            src="/1.png"
             alt="Chat preview"
-            className="w-[480px] md:w-[560px] drop-shadow-2xl rounded-xl"
+            className="w-[900px] drop-shadow-2xl max-w-2xl"
           />
        
         </div>
       </div>
+      {/* </div> */}
     </section>
   );
 }

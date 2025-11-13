@@ -29,7 +29,7 @@ export default function ShowcasePanel({ src, alt = "Showcase" }: ShowcasePanelPr
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-60
-         bg-linear-to-b from-transparent via-[#203583]/99 to-[#000000]  backdrop"
+         bg-linear-to-b from-transparent via-[#203583]/99 to-[#0a0c12]  backdrop"
       />
     </section>
     

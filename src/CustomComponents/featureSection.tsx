@@ -79,7 +79,7 @@ const ControlFeatures = () => {
   };
 
   return (
-    <div className="bg-black py-26 px-4">
+    <div className=" py-26 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -105,10 +105,10 @@ const ControlFeatures = () => {
           {/* Left side - Illustration */}
           <div className="relative flex justify-center items-center">
             <img
-              src="/loginbg.png"
+              src="/3.png"
               alt="Feature Illustration"
-              width={500}
-              height={300}
+              width={600}
+              height={500}
               className="rounded-xl "
             />
           </div>
