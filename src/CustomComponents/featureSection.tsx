@@ -79,7 +79,7 @@ const ControlFeatures = () => {
   };
 
   return (
-    <div className=" py-26 px-4">
+    <div className="mt-26 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

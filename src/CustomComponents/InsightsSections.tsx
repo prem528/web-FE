@@ -22,7 +22,6 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
   return (
     <section
       className="relative overflow-hidden text-white bg-cover " 
- 
     >
       {/* optional overlay/glow */}
       <div className="absolute inset-0 pointer-events-none" />
@@ -73,7 +72,7 @@ const InsightsSections: React.FC = () => {
       <FeatureBlock
         title="Real-Time insights"
         description="Access real-time data instantly to make quick decisions and adapt swiftly to market shifts."
-        imageSrc="/6.png"   
+        imageSrc="/start.jpg"   
         imageAlt="Real-time insights preview"
         backgroundUrl="/square.svg"
          imageWidth="420px"
@@ -83,7 +82,7 @@ const InsightsSections: React.FC = () => {
       <FeatureBlock
         title="Data-Driven decisions"
         description="Make confident decisions with comprehensive data analysis, minimizing guesswork."
-        imageSrc="/6.png"  
+        imageSrc="/screen.jpg"  
         imageAlt="Data-driven decisions preview"
         backgroundUrl="/square.svg"
          imageWidth="420px"

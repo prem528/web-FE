@@ -1,11 +1,14 @@
+import Footer from "@/layout/Footer";
 import ControlFeatures from "./featureSection";
 import FeatureshowCase from "./featureShowCase";
 import FinanceHero from "./FinanceHero";
 import GradientBackground from "./GradientBackground";
 import HeroSection from "./HeroSection";
 import InsightsSections from "./InsightsSections";
+import RatingSummary from "./RatingSummary";
 import ShowcasePanel from "./ShowcasePanel";
 import StepsSection from "./StepSection";
+import Testimonials from "./Testimonials";
 
 export default function HomePage() {
   const stepsData = [
@@ -34,7 +37,6 @@ export default function HomePage() {
       <HeroSection />
       <ShowcasePanel src="/case1.png" alt="Dashboard Preview" />
       <ControlFeatures />
-      <InsightsSections />
       <FeatureshowCase />
       <FinanceHero imageSrc="/1.png" />
       <StepsSection
@@ -43,6 +45,10 @@ export default function HomePage() {
         ctaLabel="TRY ionMonitor NOW"
         ctaHref="/register"
       />
+      <InsightsSections />
+      <Testimonials/>
+      <RatingSummary/>
+      <Footer/>
     </GradientBackground>
   );
 }

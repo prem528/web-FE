@@ -31,14 +31,14 @@ const LogoPill: React.FC<{ label: string }> = ({ label }) => (
 
 export default function () {
   return (
-    <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-20 pb-20">
+    <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-20">
       <div className="mx-auto max-w-[1400px]">
         {/* Card */}
-        <div className="relative overflow-hidden rounded-[28px] p-6 sm:p-10 md:p-24 ring-1 ring-black/5 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.25)] ">
+        <div className="relative overflow-hidden rounded-[28px] p-6 sm:p-10 md:p-34 ring-1 ring-black/1 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.25)] ">
  
           {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1 text-xs font-semibold tracking-widest text-slate-700 ring-1 ring-black/5 shadow-sm">
+            <span className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-1 text-lg font-semibold tracking-widest text-slate-700 ring-1 ring-black/5 shadow-sm">
               INTEGRATION
             </span>
 

@@ -3,7 +3,7 @@
 import React from "react";
 
 type FinanceHeroProps = {
-  imageSrc: string;          // e.g. "/images/finance-dashboard.png"
+  imageSrc: string;           
   imageAlt?: string;
 };
 
@@ -13,9 +13,10 @@ const FinanceHero: React.FC<FinanceHeroProps> = ({
 }) => {
   return (
     <section className="w-full bg-[url('/topbg11.avif')] bg-cover pt-20 py-30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div className="mx-auto max-w-[1400px] py-15">
         {/* Card container */}
-        <div className="rounded-[32px] bg-white/10 backdrop-blur-lg shadow-[0_18px_50px_rgba(15,23,42,0.12)] px-6 sm:px-10 lg:px-14 py-30">
+        <div className="rounded-[32px] backdrop-blur-xl ring-1 ring-black/1 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.25)] px-6 sm:px-10 lg:px-14 py-30">
+
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             {/* LEFT: Text content */}
             <div className="flex-1 text-center lg:text-left">
