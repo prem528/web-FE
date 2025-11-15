@@ -6,7 +6,6 @@ type FeatureBlockProps = {
   imageSrc: string;
   imageAlt?: string;
   reversed?: boolean;
-  backgroundUrl?: string; 
   imageWidth?: string;
 };
 
@@ -17,7 +16,6 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
   imageAlt = "Preview",
   reversed,
   imageWidth
-  
 }) => {
   return (
     <section
@@ -56,7 +54,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
                 className="rounded-xl drop-shadow-2xl"
               />
               {/* soft bloom */}
-              <div className="pointer-events-none absolute -inset-2 -z-10 rounded-xl bg-white/15 blur-2xl" />
+              <div className="pointer-events-none absolute -inset-2 -z-10 rounded-xl bg-white/8 blur-2xl" />
             </div>
           </div>
         </div>
@@ -72,20 +70,18 @@ const InsightsSections: React.FC = () => {
       <FeatureBlock
         title="Real-Time insights"
         description="Access real-time data instantly to make quick decisions and adapt swiftly to market shifts."
-        imageSrc="/start.jpg"   
+        imageSrc="/4.png"   
         imageAlt="Real-time insights preview"
-        backgroundUrl="/square.svg"
-         imageWidth="420px"
+        imageWidth="460px"
       />
 
       {/* Block 2 (reversed layout on desktop) */}
       <FeatureBlock
         title="Data-Driven decisions"
         description="Make confident decisions with comprehensive data analysis, minimizing guesswork."
-        imageSrc="/screen.jpg"  
+        imageSrc="/9.png"  
         imageAlt="Data-driven decisions preview"
-        backgroundUrl="/square.svg"
-         imageWidth="420px"
+        imageWidth="420px"
         reversed
       />
     </div>

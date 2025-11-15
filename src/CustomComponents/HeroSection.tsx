@@ -14,7 +14,7 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-0 py-24 md:py-36 flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Left text section */}
         <div className="max-w-2xl">
-          <h1 className="text-5xl sm:text-6xl font-semibold leading-tight mb-6">
+          <h1 className="text-5xl lg:text-6xl font-semibold leading-tight mb-6 text-slate-500">
           Confident Parenting Starts with Smart Monitoring
   
            </h1>

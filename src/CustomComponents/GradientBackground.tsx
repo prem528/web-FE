@@ -35,7 +35,7 @@ export default function GradientBackground({
   images = [
  
   ],
-}: GradientBackgroundProps) {
+}: Readonly<GradientBackgroundProps>) {
   return (
     <div className="relative min-h-screen w-full">
       {/* THEME CANVAS */}
@@ -45,23 +45,39 @@ export default function GradientBackground({
  
 
         {/* image layers */}
-        {images.map((img, i) => (
+        {images.map((img, i) => {
+          let widthValue = "auto";
+          if (img.size?.includes("px")) {
+            widthValue = img.size;
+          } else if (img.size === "cover") {
+            widthValue = "100%";
+          }
+          
+          let heightValue = "auto";
+          if (img.size?.includes("px")) {
+            heightValue = img.size;
+          } else if (img.size === "cover") {
+            heightValue = "100%";
+          }
+          
+          return (
           <div
-            key={i}
+            key={`img-layer-${i}-${img.src}`}
             className={["pointer-events-none absolute select-none will-change-transform", posCls(img.position ?? "top-left"), img.className ?? ""].join(" ")}
             style={{
               backgroundImage: `url('${img.src}')`,
               backgroundRepeat: "no-repeat",
               backgroundSize: img.size ?? "contain",
               backgroundPosition: "center",
-              width: img.size?.includes("px") ? img.size : (img.size === "cover" ? "100%" : "auto"),
-              height: img.size?.includes("px") ? img.size : (img.size === "cover" ? "100%" : "auto"),
+              width: widthValue,
+              height: heightValue,
               inset: img.size === "cover" ? 0 : undefined,
               opacity: (img.opacity ?? 80) / 100,
               mixBlendMode: (img.blend ?? "lighten") as any,
             }}
           />
-        ))}
+          );
+        })}
 
         {/* optional grain (avoids banding) */}
         {noise && (

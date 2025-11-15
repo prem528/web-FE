@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import { Button } from "@/components/ui/button";
-// import { Link } from "react-router-dom";
+ 
 
 type Step = {
   heading: string;
@@ -12,8 +11,6 @@ type Step = {
 type StepsSectionProps = {
   heading: string;
   steps: Step[];
-  ctaLabel?: string;
-  ctaHref?: string;
 };
 
 const StepsSection = ({
@@ -84,7 +81,7 @@ const StepsSection = ({
 
               {steps.map((step, index) => (
                 <div
-                  key={index}
+                  key={1}
                   className="flex right-0.5 items-start space-x-4 relative transition-all duration-500"
                 >
                   {/* Animated Number Circle */}

@@ -38,15 +38,14 @@ export default function HomePage() {
       <ShowcasePanel src="/case1.png" alt="Dashboard Preview" />
       <ControlFeatures />
       <FeatureshowCase />
-      <FinanceHero imageSrc="/1.png" />
+      <FinanceHero imageSrc="/screen.png" />
       <StepsSection
         heading="How ionMonitor Works"
         steps={stepsData}
-        ctaLabel="TRY ionMonitor NOW"
-        ctaHref="/register"
       />
       <InsightsSections />
       <Testimonials/>
+     
       <RatingSummary/>
       <Footer/>
     </GradientBackground>

@@ -2,11 +2,9 @@ import { useState } from "react";
 import {
   ChevronDown,
   Camera,
-
   Mic,
   Phone,
   Search,
- 
   FullscreenIcon,
   Video,
 } from "lucide-react";
@@ -83,14 +81,15 @@ const ControlFeatures = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4">
-            Remote Control Apps to Protect Your Family
+          <h2 className="text-4xl md:text-6xl text-slate-600 mb-4">
+            Real-Time Safety For Your Child
           </h2>
           <p className="text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            KidsGuard Pro allows you to control the target phone remotely. You
-            can control it even if the phone is not around. With the live record
-            feature, you can know the environment around the phone and keep an
-            eye on your child's offline activities at any time.
+            Manage and monitor your child’s device with powerful remote-control
+            tools. Access live surroundings, track app usage, view activities,
+            and stay aware — even when the device isn’t with you. Everything you
+            need to protect your child’s digital and real-world safety is right
+            at your fingertips.
           </p>
           <div className="mt-6 flex justify-center text-sm text-gray-500 ">
             <div>

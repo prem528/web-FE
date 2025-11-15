@@ -29,12 +29,12 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
                 "Features",
               ].map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:underline hover:text-gray-900 transition-colors"
+                  <button
+                    type="button"
+                    className="hover:underline hover:text-gray-900 transition-colors text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -55,12 +55,12 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
                 "Testimonials",
               ].map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:underline hover:text-gray-900 transition-colors"
+                  <button
+                    type="button"
+                    className="hover:underline hover:text-gray-900 transition-colors text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -81,12 +81,12 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
                 "Tinder Tracking",
               ].map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:underline hover:text-gray-900 transition-colors"
+                  <button
+                    type="button"
+                    className="hover:underline hover:text-gray-900 transition-colors text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -105,12 +105,12 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
                 "Terms of Usage",
               ].map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:underline hover:text-gray-900 transition-colors"
+                  <button
+                    type="button"
+                    className="hover:underline hover:text-gray-900 transition-colors text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -166,7 +166,7 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
           </p>
         </div>
 
-        <h2 className="text-center text-gray-800 pt-4">
+        <h2 className="text-center text-gray-200 pt-4">
           © 2025 ion Monitor All rights reserved.
         </h2>
       </div>
