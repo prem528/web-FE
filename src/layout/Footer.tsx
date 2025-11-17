@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Footer: React.FC = () => {
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
@@ -10,14 +11,24 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
 
   return (
     <footer className="relative py-6 px-4 bg-[url('/topbg10.avif')] bg-cover overflow-hidden">
-      {/* ALL ACTUAL CONTENT */}
+      {/* MAIN CONTENT */}
       <div className="relative max-w-7xl mx-auto z-10 mb-42">
+        {/* Top grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12 mt-28">
           {/* Quick Links */}
           <div>
-            <h3 className="text-gray-400 font-semibold text-2xl mb-6">
+            <motion.h3
+              className="text-gray-400 font-semibold text-2xl mb-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.6 }}
+            >
               Quick Links
-            </h3>
+            </motion.h3>
             <ul className="space-y-3 text-gray-500">
               {[
                 "About Us",
@@ -42,9 +53,18 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
 
           {/* More Links */}
           <div>
-            <h3 className="text-gray-400 font-semibold text-2xl mb-6">
+            <motion.h3
+              className="text-gray-400 font-semibold text-2xl mb-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.3,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.6 }}
+            >
               More Links
-            </h3>
+            </motion.h3>
             <ul className="space-y-3 text-gray-500">
               {[
                 "Make in India",
@@ -68,9 +88,18 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
 
           {/* Use Cases */}
           <div>
-            <h3 className="text-gray-400 font-semibold text-2xl mb-6">
+            <motion.h3
+              className="text-gray-400 font-semibold text-2xl mb-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.6 }}
+            >
               Use Cases
-            </h3>
+            </motion.h3>
             <ul className="space-y-3 text-gray-500">
               {[
                 "Android Tracking",
@@ -94,9 +123,18 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
 
           {/* Legal Policies */}
           <div>
-            <h3 className="text-gray-400 font-semibold text-2xl mb-6">
+            <motion.h3
+              className="text-gray-400 font-semibold text-2xl mb-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.6 }}
+            >
               Legal Policies
-            </h3>
+            </motion.h3>
             <ul className="space-y-3 text-gray-500">
               {[
                 "Cookie Policy",
@@ -118,9 +156,18 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
 
           {/* Secure Payments */}
           <div>
-            <h3 className="text-gray-400 font-semibold text-2xl mb-6">
+            <motion.h3
+              className="text-gray-400 font-semibold text-2xl mb-6"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true, amount: 0.6 }}
+            >
               Secure Payments
-            </h3>
+            </motion.h3>
             <p className="text-md text-gray-300 mb-6 leading-relaxed">
               We accept payments via all major debit, credit cards, internet
               banking and PayPal.
@@ -151,7 +198,16 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
         </div>
 
         {/* Disclaimer Section */}
-        <div className="border-t  border-b pb-2 lg:pt-2 backdrop">
+        <motion.div
+          className="border-t border-b pb-2 lg:pt-2 backdrop"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <h3 className="text-gray-400 font-semibold text-2xl text-center">
             Disclaimer
           </h3>
@@ -164,19 +220,31 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
               {showFullDisclaimer ? "Read less" : "Read more"}
             </button>
           </p>
-        </div>
+        </motion.div>
 
-        <h2 className="text-center text-gray-200 pt-4">
+        <motion.h2
+          className="text-center text-gray-200 pt-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.6,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           © 2025 ion Monitor All rights reserved.
-        </h2>
+        </motion.h2>
       </div>
 
-      {/* BIG BACKGROUND WORD */}
-      <div className="pointer-events-none absolute inset-0 flex items-end justify-center pb-0 opacity-20 select-none z-0">
+      {/* BIG BACKGROUND WORD with subtle breathing (still premium) */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 flex items-end justify-center pb-0 opacity-20 select-none z-0"
+
+      >
         <h1 className="text-[220px] font-extrabold text-white tracking-tight blur-[2px] leading-none">
           ION MONITOR
         </h1>
-      </div>
+      </motion.div>
     </footer>
   );
 };

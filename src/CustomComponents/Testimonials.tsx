@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+
 
 const Testimonials: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -74,9 +76,18 @@ const Testimonials: React.FC = () => {
   return (
     <section className="py-20 overflow-hidden ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-28 py-12">
-        <h2 className="text-5xl text-gray-400 text-center mb-8 sm:mb-12">
-          What Our Clients Said About Us
-        </h2>
+      <motion.h2
+      className="text-5xl text-gray-400 text-center mb-8 sm:mb-12"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 2.2,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+    >
+      What Our Clients Said About Us
+    </motion.h2>
 
         <div className="relative">
           {/* SCROLL AREA */}

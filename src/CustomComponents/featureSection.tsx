@@ -80,10 +80,20 @@ const ControlFeatures = () => {
     <div className="mt-26 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 90 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.9,
+            ease: [0.16, 1, 0.3, 1],  
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <h2 className="text-4xl md:text-6xl text-slate-600 mb-4">
             Real-Time Safety For Your Child
           </h2>
+
           <p className="text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Manage and monitor your child’s device with powerful remote-control
             tools. Access live surroundings, track app usage, view activities,
@@ -91,6 +101,7 @@ const ControlFeatures = () => {
             need to protect your child’s digital and real-world safety is right
             at your fingertips.
           </p>
+
           <div className="mt-6 flex justify-center text-sm text-gray-500 ">
             <div>
               <div className="sm:base-4 base:6 w-4 h-4 bg-blue-500 rounded-full mr-2"></div>
@@ -98,7 +109,7 @@ const ControlFeatures = () => {
             Note: Some of the features listed below are available for Android
             devices only.
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Illustration */}
