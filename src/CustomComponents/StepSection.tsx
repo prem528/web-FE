@@ -36,7 +36,7 @@ const StepsSection = ({
     steps.length <= 1 ? 1 : activeStep / (steps.length - 1 || 1);
 
   return (
-    <div className="pb-16  px-4 sm:px-6 lg:px-8 text-justify">
+    <div className="pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image with Transition */}
@@ -65,7 +65,7 @@ const StepsSection = ({
           {/* Right Side - Step Content */}
           <div className="space-y-10">
             <div className="text-center lg:text-left">
-              <h2 className="text-5xl text-gray-400">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl text-gray-400">
                 {heading}
               </h2>
             </div>

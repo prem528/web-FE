@@ -14,6 +14,7 @@ const ControlFeatures = () => {
   const [expandedFeature, setExpandedFeature] = useState<string | null>(
     "screenshots"
   );
+   
 
   const features = [
     {
@@ -22,8 +23,9 @@ const ControlFeatures = () => {
       icon: <FullscreenIcon className="w-5 h-5" />,
       color: "text-orange-500",
       bgColor: "bg-orange-100",
+      imageSrc: "screenshots.jpg", 
       description:
-        "Capture screenshots of the target phone remotely, knowing what they are viewing, chatting, or playing.",
+        "The most powerful feature of our ion monitor application is the function of capturing screenshots. This tool takes a screenshot of the device screen",
     },
     {
       id: "record-screen",
@@ -31,8 +33,9 @@ const ControlFeatures = () => {
       icon: <Video className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
+      imageSrc: "/liverecording.png",
       description:
-        "Record the screen activity to see exactly what happens on the target device.",
+        "This allows parents to capture a real-time video recording of the smartphone of their child. And provide a clear view of the device activities.",
     },
     {
       id: "record-surround",
@@ -40,8 +43,9 @@ const ControlFeatures = () => {
       icon: <Mic className="w-5 h-5" />,
       color: "text-green-500",
       bgColor: "bg-green-100",
+      imageSrc: "/surrounding.jpg",
       description:
-        "Record the surrounding environment to understand the context and location.",
+        "In Ion monitor helps parents to keep aware of their child’s surroundings by safely activating their phone’s microphone to record nearby sounds, ensuring their safety and peace of mind.",
     },
     {
       id: "take-photos",
@@ -49,8 +53,9 @@ const ControlFeatures = () => {
       icon: <Camera className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
+      imageSrc: "/photos1.jpg",
       description:
-        "Remotely take photos using the target phone's camera without detection.",
+        "It instantly clicks photos of your child’s environment to have a clear view. It helps you know where they are and with whom for parents’ peace of mind.",
     },
     {
       id: "record-calls",
@@ -58,8 +63,9 @@ const ControlFeatures = () => {
       icon: <Phone className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
+      imageSrc: "/callrecord.png",
       description:
-        "Record incoming and outgoing calls to monitor communication activities.",
+        "The call recording feature of our ion monitor allows the parents to access and store both incoming and outgoing phone calls.",
     },
     {
       id: "track-keywords",
@@ -67,14 +73,22 @@ const ControlFeatures = () => {
       icon: <Search className="w-5 h-5" />,
       color: "text-red-500",
       bgColor: "bg-red-100",
+      imageSrc: "/keywords.jpg",
       description:
-        "Monitor specific keywords in messages and communications for safety concerns.",
+        "This feature keeps an eye on the words or phrases typed, searched, and texted on your child’s smartphone.",
     },
   ];
 
   const toggleFeature = (featureId: string) => {
     setExpandedFeature(expandedFeature === featureId ? null : featureId);
   };
+
+  // Decide which feature's image to show
+  const activeFeatureId =
+     expandedFeature || features[0]?.id;
+
+  const activeFeature =
+    features.find((f) => f.id === activeFeatureId) || features[0];
 
   return (
     <div className="mt-26 px-4">
@@ -86,7 +100,7 @@ const ControlFeatures = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.9,
-            ease: [0.16, 1, 0.3, 1],  
+            ease: [0.16, 1, 0.3, 1],
           }}
           viewport={{ once: true, amount: 0.5 }}
         >
@@ -112,14 +126,21 @@ const ControlFeatures = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Illustration */}
-          <div className="relative flex justify-center items-center">
-            <img
-              src="/3.png"
-              alt="Feature Illustration"
+          {/* Left side - Dynamic Illustration */}
+          <div className="relative justify-center items-center hidden lg:block">
+            <motion.img
+              key={activeFeature.imageSrc} // triggers smooth transition on change
+              src={activeFeature.imageSrc || "/callrecord.png"}
+              alt={activeFeature.title}
               width={600}
               height={500}
-              className="rounded-xl "
+              className="rounded-xl max-w-full"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             />
           </div>
 
@@ -132,7 +153,8 @@ const ControlFeatures = () => {
               >
                 <button
                   onClick={() => toggleFeature(feature.id)}
-                  className="w-full flex items-center justify-between p-4 text-left  hover:bg-gray-800 transition-colors cursor-pointer"
+ 
+                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center space-x-3">
                     <div
@@ -140,7 +162,7 @@ const ControlFeatures = () => {
                     >
                       <div className={feature.color}>{feature.icon}</div>
                     </div>
-                    <span className="font-semibold text-white text-2xl">
+                    <span className="text-white text-xl">
                       {feature.title}
                     </span>
                   </div>

@@ -140,10 +140,10 @@ const Testimonials: React.FC = () => {
           {/* eslint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
 
           {/* LEFT FADE */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-linear-to-r from-[#0a0c12] via-[#020617] to-transparent z-10" />
+          <div className="hidden md:block pointer-events-none absolute left-0 top-0 h-full w-16 bg-linear-to-r from-[#090b12] via-[#090b12] to-transparent z-10" />
 
           {/* RIGHT FADE */}
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-[#0a0c12] via-[#020617] to-transparent z-10" />
+          <div className="hidden md:block pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-[#090b12] via-[#090b12] to-transparent z-10" />
         </div>
       </div>
     </section>

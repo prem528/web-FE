@@ -38,7 +38,7 @@ export default function HomePage() {
       <ShowcasePanel src="/case1.png" alt="Dashboard Preview" />
       <ControlFeatures />
       <FeatureshowCase />
-      <FinanceHero imageSrc="/screen.png" />
+      <FinanceHero imageSrc="/screen2.png" />
       <StepsSection
         heading="How ionMonitor Works"
         steps={stepsData}

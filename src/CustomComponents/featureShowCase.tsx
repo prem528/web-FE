@@ -25,6 +25,10 @@ const logosRow2: Logo[] = [
   { id: "r2-4", label: "Instagram", iconSrc: "/icons/instagram.png" },
   { id: "r2-5", label: "LinkedIn", iconSrc: "/icons/linkedin.png" },
   { id: "r2-6", label: "Hangout", iconSrc: "/icons/hangout.png" },
+  { id: "r2-6", label: "Viber", iconSrc: "/viber.png" },
+  { id: "r2-6", label: "Tinder", iconSrc: "/tinder.webp" },
+  { id: "r2-6", label: "Snapchat", iconSrc: "/snapchat.png" },
+  { id: "r2-6", label: "Skype", iconSrc: "/skype.png" },
 ];
 
 const LogoPill: React.FC<{ logo: Logo }> = ({ logo }) => (
@@ -163,9 +167,11 @@ export default function FeatureShowCase() {
           </motion.div>
 
           {/* Logos – marquee remains as-is */}
-          <div className="mt-10 space-y-8">
-            <LogoRow logos={logosRow1} direction="left" />
-            <LogoRow logos={logosRow2} direction="right" />
+          <div className="mt-10 -mx-10 lg:-mx-30 mb-4">
+            <div className="space-y-8 px-4 sm:px-8">
+              <LogoRow logos={logosRow1} direction="left" />
+              <LogoRow logos={logosRow2} direction="right" />
+            </div>
           </div>
         </motion.div>
       </div>

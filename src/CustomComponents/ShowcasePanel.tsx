@@ -25,7 +25,7 @@ export default function ShowcasePanel({
               <img
                 src={src}
                 alt={alt}
-                className="mx-auto w-full h-auto rounded-[46px] drop-shadow-2xl"
+                className="mx-auto w-full h-auto rounded-2xl md:rounded-[46px] drop-shadow-2xl"
                 draggable="false"
               />
             </div>

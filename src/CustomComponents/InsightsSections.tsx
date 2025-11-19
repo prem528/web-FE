@@ -24,7 +24,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
 
       {/* Smooth card animation */}
       <motion.div
-        className="relative mx-auto max-w-6xl px-6 lg:px-8 py-14"
+        className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-14"
         initial={{ opacity: 0, scale: 0.94, y: 40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{
@@ -35,7 +35,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
       >
         <div className="rounded-3xl border border-white/15 bg-white/5 backdrop-blur-md ring-1 ring-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]">
           <div
-            className={`grid items-center gap-10 p-4 md:p-2 ml-8 md:grid-cols-2 ${
+            className={`grid items-center gap-8 sm:gap-10 p-4 sm:p-6 lg:p-8 md:grid-cols-2 ${
               reversed ? "md:[&>div:first-child]:order-2" : ""
             }`}
           >
@@ -100,13 +100,16 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
               </motion.button>
             </motion.div>
 
-            {/* Image (no animation, stays clean) */}
-            <div className="relative flex justify-center">
+            {/* Image */}
+            <div className="relative flex justify-center px-4 sm:px-0 -mb-4 md:-mb-6 lg:-mb-8">
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                style={{ width: imageWidth || "40px" }}
-                className="rounded-xl drop-shadow-2xl"
+                style={{
+                  width: "100%",
+                  maxWidth: imageWidth || "460px",
+                }}
+                className="rounded-t-2xl drop-shadow-2xl h-auto"
               />
               <div className="pointer-events-none absolute -inset-2 -z-10 rounded-xl bg-white/8 blur-2xl" />
             </div>
@@ -123,17 +126,17 @@ const InsightsSections: React.FC = () => {
       <FeatureBlock
         title="Real-Time insights"
         description="Access real-time data instantly to make quick decisions and adapt swiftly to market shifts."
-        imageSrc="/4.png"
+        imageSrc="/phoness.png"
         imageAlt="Real-time insights preview"
-        imageWidth="460px"
+        imageWidth="380px"
       />
 
       <FeatureBlock
         title="Data-Driven decisions"
         description="Make confident decisions with comprehensive data analysis, minimizing guesswork."
-        imageSrc="/9.png"
+        imageSrc="/userprofile.png"
         imageAlt="Data-driven decisions preview"
-        imageWidth="420px"
+        imageWidth="500px"
         reversed
       />
     </div>

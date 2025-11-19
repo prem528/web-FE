@@ -26,10 +26,10 @@ const RatingSummary: React.FC = () => {
   };
 
   return (
-    <div className="relative px-[300px] py-8 mt-4 mb-16">
+    <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8 mt-4 mb-16">
       {/* Card with smooth pop-in */}
       <motion.div
-        className="backdrop-blur-2xl rounded-3xl p-16 text-white border border-gray-500"
+        className="backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-16 text-white border border-gray-500"
         initial={{ opacity: 0, scale: 0.94, y: 40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{
@@ -72,8 +72,8 @@ const RatingSummary: React.FC = () => {
               <img src="/ionlogo.png" alt="ION Logo" className="h-20 w-auto" />
             </div>
 
-            <div className="mb-3 ml-10">
-              <span className="text-4xl sm:text-5xl ml-10 font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            <div className="mb-3 lg:ml-10">
+              <span className="text-4xl sm:text-5xl lg:ml-10 font-bold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 4.4
               </span>
               <span className="text-xl sm:text-2xl text-gray-300 ml-1">
@@ -81,11 +81,11 @@ const RatingSummary: React.FC = () => {
               </span>
             </div>
 
-            <div className="flex justify-center lg:justify-start space-x-1 mb-3 ml-10">
+            <div className="flex justify-center lg:justify-start space-x-1 mb-3 lg:ml-10">
               {renderStars(4.4)}
             </div>
 
-            <p className="text-sm sm:text-base text-gray-300 ml-10">
+            <p className="text-sm sm:text-base text-gray-300 lg:ml-10">
               Based on <span className="font-semibold text-white">5,000+</span>{" "}
               reviews
             </p>
