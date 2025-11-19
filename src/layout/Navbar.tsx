@@ -36,8 +36,7 @@ const Navbar = () => {
 
               <div
                 className="relative"
-                onMouseEnter={() => setFeaturesOpen(true)}
-                onMouseLeave={() => setFeaturesOpen(false)}
+ 
               >
                 <button className="flex items-center text-gray-300 hover:text-white px-3 py-2 text-sm font-medium cursor-pointer">
                   Features
@@ -63,7 +62,7 @@ const Navbar = () => {
                 Review
               </Link>
               <Link
-                to="/auth/login"
+                to="https://dash.ionmonitor.com/user/login"
                 className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
               >
                 Log in
@@ -216,7 +215,7 @@ const Navbar = () => {
               Review
             </Link>
             <Link
-              to="/auth/login"
+              to="https://dash.ionmonitor.com/user/login"
               className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors"
               onClick={() => setMenuOpen(false)}
             >
