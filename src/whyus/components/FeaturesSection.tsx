@@ -1,14 +1,6 @@
-import { Check, Phone, MessageCircle, MapPin, Star } from "lucide-react";
 
 const FeaturesSection = () => {
-  const features = [
-    "24/7 Live Chat Support",
-    "24/7 Phone Call Support",
-    "Physical Office",
-    "High Touch Communication",
-    "Committed to Quality",
-  ];
-
+ 
   return (
     <section
       className="relative py-10 px-6 overflow-hidden"
@@ -17,7 +9,7 @@ const FeaturesSection = () => {
         backgroundBlendMode: "soft-light",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "",
       }}
     >
       <div className="relative max-w-7xl mx-auto py-20">

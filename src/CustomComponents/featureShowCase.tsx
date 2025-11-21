@@ -86,6 +86,7 @@ export default function FeatureShowCase() {
           }}
           viewport={{ once: true, amount: 0.4 }}
         >
+
           {/* Header with smooth staggered fade-up */}
           <motion.div
             className="mx-auto max-w-3xl text-center"
@@ -168,6 +169,7 @@ export default function FeatureShowCase() {
 
           {/* Logos – marquee remains as-is */}
           <div className="mt-10 -mx-10 lg:-mx-30 mb-4">
+            
             <div className="space-y-8 px-4 sm:px-8">
               <LogoRow logos={logosRow1} direction="left" />
               <LogoRow logos={logosRow2} direction="right" />

@@ -1,6 +1,7 @@
 import React from "react";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const RatingSummary: React.FC = () => {
   const renderStars = (rating: number) => {
@@ -27,9 +28,19 @@ const RatingSummary: React.FC = () => {
 
   return (
     <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8 mt-4 mb-16">
+      <WavyBackground
+        containerClassName="absolute inset-0 -z-10 h-full w-full"
+        className="w-full h-full"
+        backgroundFill="#030712" // dark base under waves
+        blur={18}
+        speed="slow"
+        waveOpacity={0.45}
+        colors={["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"]}
+      />
+
       {/* Card with smooth pop-in */}
       <motion.div
-        className="backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-16 text-white border border-gray-500"
+        className="backdrop-blur-lg rounded-3xl p-6 sm:p-10 lg:p-16 text-white border border-gray-500"
         initial={{ opacity: 0, scale: 0.94, y: 40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{
@@ -108,7 +119,7 @@ const RatingSummary: React.FC = () => {
             </h3>
             <div className="flex flex-wrap items-center justify-center lg:justify-start space-x-2 text-lg text-gray-300">
               <span>Read more than</span>
-              <span className="font-bold text-gray-500">1,800</span>
+              <span className="font-bold text-gray-700">1,800</span>
               <span>reviews</span>
             </div>
           </motion.div>

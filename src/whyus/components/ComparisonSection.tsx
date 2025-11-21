@@ -4,17 +4,6 @@ import { Link } from "react-router-dom";
  
 
 const ComparisonSection = () => {
-  const features = [
-    "Host call Records",
-    "Live call Install",
-    "Wi-Fi Call Recording",
-    "Record Phone Surroundings",
-    "Live Photos and Phone Camera",
-    "Live View and Phone Camera",
-    "Remote Mobile Software",
-    "SIM Live Chat",
-    "Number of Subjects",
-  ];
 
   const competitors = [
     { name: "ION-MONITOR", color: "bg-blue-600" },

@@ -30,7 +30,7 @@ const UniqueSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover">
+    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover ">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl text-slate-600 mb-6">WHAT MAKE US UNIQUE?</h2>

@@ -46,6 +46,7 @@ export default function HomePage() {
       <InsightsSections />
       <Testimonials/>
       <RatingSummary/>
+    
       <Footer/>
     </GradientBackground>
   );
