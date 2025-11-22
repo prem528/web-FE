@@ -137,3 +137,20 @@
   }
 }
 
+
+/* === Testimonials marquee animation === */
+@keyframes testimonials-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Since we render list twice */
+  }
+}
+
+.testimonials-track {
+  display: flex;
+  width: max-content;
+  animation: testimonials-marquee 30s linear infinite;
+}
+
