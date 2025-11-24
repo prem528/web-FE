@@ -5,8 +5,7 @@ import HeroSection from "./components/HeroSection";
 import HistorySection from "./components/HistorySection";
 import UniqueSection from "./components/UniqueSection";
 import Footer from "@/layout/Footer";
-import GlobeDemo from "@/components/globe-demo";
- 
+  
 
 const WhyUs = () => {
   return (
@@ -17,7 +16,7 @@ const WhyUs = () => {
       <FeaturesSection />
       <UniqueSection />
       <ComparisonSection />
-      <GlobeDemo/>
+       
       <Footer/>
     </GradientBackground>  
   );

@@ -1,6 +1,9 @@
 import { Check, X, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const ComparisonSection = () => {
   const competitors = [
@@ -14,14 +17,8 @@ const ComparisonSection = () => {
   // Manual matrix: [ION-MONITOR, mSpy, Spyzie, Cocospy, Spyera]
   const comparisonData = [
     { feature: "Host Call Records", values: [true, true, false, false, true] },
-    {
-      feature: "Live Call Install",
-      values: [true, false, false, false, false],
-    },
-    {
-      feature: "Wi-Fi Call Recording",
-      values: [true, false, true, false, false],
-    },
+    { feature: "Live Call Install", values: [true, false, false, false, false] },
+    { feature: "Wi-Fi Call Recording", values: [true, false, true, false, false] },
     {
       feature: "Record Phone Surroundings",
       values: [true, true, false, true, true],
@@ -47,7 +44,13 @@ const ComparisonSection = () => {
 
   return (
     <section className="pb-20 px-4 sm:px-6 lg:px-10 relative">
-      <div className="relative max-w-6xl mx-auto">
+      <motion.div
+        className="relative max-w-6xl mx-auto"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2.5, ease: SOFT_EASE }}
+        viewport={{ once: true, amount: 0.35 }}
+      >
         {/* Header */}
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl bg-clip-text text-transparent bg-linear-to-r from-sky-600 via-cyan-600 to-indigo-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.30)]">
@@ -167,7 +170,7 @@ const ComparisonSection = () => {
             </Button>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

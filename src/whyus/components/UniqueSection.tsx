@@ -1,4 +1,7 @@
 import { Monitor, Users, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+
+const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const UniqueSection = () => {
   const uniqueFeatures = [
@@ -30,18 +33,33 @@ const UniqueSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover ">
+    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        
+        {/* Title Section (smooth slide-up) */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4, ease: SOFT_EASE }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h2 className="text-5xl text-slate-600 mb-6">WHAT MAKE US UNIQUE?</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             5 minute Installation - It typically takes under three minutes to
             install the app on your smartphone. The process to install the app
             is very simple.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* FIRST GRID — slide up together */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 mb-16"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: SOFT_EASE }}
+          viewport={{ once: true, amount: 0.35 }}
+        >
           {uniqueFeatures.map((feature, index) => (
             <div
               key={index}
@@ -66,26 +84,29 @@ const UniqueSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mt-12 py-28">
+        {/* SECOND GRID — slide up together */}
+        <motion.div
+          className="grid lg:grid-cols-3 gap-8 mt-12 py-28"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.6, ease: SOFT_EASE }}
+          viewport={{ once: true, amount: 0.35 }}
+        >
           {/* Card 1 */}
-          <div className="relative group overflow-hidden rounded-3xl border border-slate-700   backdrop-blur-xl p-7 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(15,23,42,0.18)]">
-            {/* subtle glow */}
+          <div className="relative group overflow-hidden rounded-3xl border border-slate-700 backdrop-blur-xl p-7 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(15,23,42,0.18)]">
             <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-blue-500/15 blur-2xl" />
-
             <div className="relative space-y-4">
               <div className="inline-flex h-21 w-21 items-center justify-center rounded-xl bg-linear-to-tr from-blue-600 to-sky-400 text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
                 <Monitor className="w-16 h-16" />
               </div>
-
               <div>
                 <h3 className="text-lg font-semibold text-slate-100 mb-1">
                   Advanced Monitoring
                 </h3>
                 <div className="h-0.5 w-10 rounded-full bg-linear-to-r from-blue-500 to-sky-400" />
               </div>
-
               <p className="text-sm text-slate-300 leading-relaxed">
                 Real-time tracking with comprehensive analytics and detailed
                 reporting to keep you fully informed at a glance.
@@ -96,19 +117,16 @@ const UniqueSection = () => {
           {/* Card 2 */}
           <div className="relative group overflow-hidden rounded-3xl border border-slate-700 backdrop-blur-xl p-7 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(15,23,42,0.18)]">
             <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-emerald-500/15 blur-2xl" />
-
             <div className="relative space-y-4">
               <div className="inline-flex h-21 w-21 items-center justify-center rounded-xl bg-linear-to-tr from-emerald-600 to-green-400 text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
                 <Users className="w-16 h-16" />
               </div>
-
               <div>
                 <h3 className="text-lg font-semibold text-slate-300 mb-1">
                   Expert Support Team
                 </h3>
                 <div className="h-0.5 w-10 rounded-full bg-linear-to-r from-emerald-500 to-lime-400" />
               </div>
-
               <p className="text-sm text-slate-300 leading-relaxed">
                 24/7 dedicated support from specialists who understand
                 monitoring, installation, and real-world troubleshooting.
@@ -119,26 +137,23 @@ const UniqueSection = () => {
           {/* Card 3 */}
           <div className="relative group overflow-hidden rounded-3xl border border-slate-700 backdrop-blur-xl p-7 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_26px_70px_rgba(15,23,42,0.18)]">
             <div className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-purple-500/18 blur-2xl" />
-
             <div className="relative space-y-4">
               <div className="inline-flex h-21 w-21 items-center justify-center rounded bg-linear-to-tr from-purple-600 to-pink-500 text-white shadow-lg group-hover:scale-105 transition-transform duration-300">
                 <Zap className="w-16 h-16" />
               </div>
-
               <div>
                 <h3 className="text-lg font-semibold text-slate-300 mb-1">
                   Lightning Fast
                 </h3>
                 <div className="h-0.5 w-10 rounded-full bg-linear-to-r from-purple-500 to-pink-400" />
               </div>
-
               <p className="text-sm text-slate-300 leading-relaxed">
                 Quick installation, instant sync, and fast dashboards so you can
                 start monitoring in just a few minutes.
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

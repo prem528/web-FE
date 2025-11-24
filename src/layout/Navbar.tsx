@@ -56,7 +56,7 @@ const Navbar = () => {
                 Why us?
               </Link>
               <Link
-                to="/reviews"
+                to="/reviews="
                 className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
               >
                 Review
@@ -89,7 +89,7 @@ const Navbar = () => {
             </Button>
 
             <Button asChild className="bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-lg transition-all duration-300 cursor-pointer">
-              <Link to="/pricing">Buy now</Link>
+              <Link to="https://dash.ionmonitor.com/pricing">Buy now</Link>
             </Button>
           </div>
         </div>
@@ -229,7 +229,7 @@ const Navbar = () => {
               Try now
             </Button>
             <Button asChild className="w-full bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-base transition-all duration-300 cursor-pointer">
-              <Link to="/pricing">Buy now</Link>
+              <Link to="https://dash.ionmonitor.com/pricing">Buy now</Link>
             </Button>
           </div>
         </div>

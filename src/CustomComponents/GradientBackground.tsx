@@ -41,7 +41,7 @@ export default function GradientBackground({
       {/* THEME CANVAS */}
       <div className={`${fixed ? "fixed" : "absolute"} inset-0 -z-10 overflow-hidden`} aria-hidden>
         {/* base wash */}
-        <div className="absolute inset-0 bg-[#0a0c12]" />
+        <div className="absolute inset-0 bg-[#020512]" />
  
 
         {/* image layers */}

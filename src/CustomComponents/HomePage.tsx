@@ -150,7 +150,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ShowcasePanel src="/case1.png" alt="Dashboard Preview" />
+      <ShowcasePanel src="/desktop1.png" alt="Dashboard Preview" />
       <ControlFeatures />
       <FeatureshowCase />
       <FinanceHero imageSrc="/screen2.png" />

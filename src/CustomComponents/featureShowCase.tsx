@@ -25,11 +25,38 @@ const logosRow2: Logo[] = [
   { id: "r2-4", label: "Instagram", iconSrc: "/icons/instagram.png" },
   { id: "r2-5", label: "LinkedIn", iconSrc: "/icons/linkedin.png" },
   { id: "r2-6", label: "Hangout", iconSrc: "/icons/hangout.png" },
-  { id: "r2-6", label: "Viber", iconSrc: "/viber.png" },
-  { id: "r2-6", label: "Tinder", iconSrc: "/tinder.webp" },
-  { id: "r2-6", label: "Snapchat", iconSrc: "/snapchat.png" },
-  { id: "r2-6", label: "Skype", iconSrc: "/skype.png" },
+  { id: "r2-7", label: "Viber", iconSrc: "/viber.png" },
+  { id: "r2-8", label: "Tinder", iconSrc: "/tinder.webp" },
+  { id: "r2-9", label: "Snapchat", iconSrc: "/snapchat.png" },
+  { id: "r2-10", label: "Skype", iconSrc: "/skype.png" },
 ];
+
+const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
+
+const fadeParent = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.4,
+      ease: SOFT_EASE,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const fadeChild = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.1,
+      ease: SOFT_EASE,
+    },
+  },
+};
 
 const LogoPill: React.FC<{ logo: Logo }> = ({ logo }) => (
   <div className="inline-flex items-center gap-2 rounded-2xl bg-white/70 px-5 py-3 text-slate-700 ring-1 ring-black/5 shadow-sm">
@@ -55,7 +82,7 @@ const LogoRow: React.FC<{
   return (
     <div className="relative w-full overflow-hidden">
       <div
-        className={`flex w-max items-center gap-4 sm:gap-6 ${
+        className={`flex w-max items-center gap-4 sm:gap-6 will-change-transform ${
           direction === "left"
             ? "animate-[scroll-left_25s_linear_infinite]"
             : "animate-[scroll-right_25s_linear_infinite]"
@@ -75,60 +102,34 @@ export default function FeatureShowCase() {
   return (
     <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-10">
       <div className="mx-auto max-w-[1400px]">
-        {/* Card with slow, smooth pop-in */}
+        {/* Card with soft, light pop-in */}
         <motion.div
           className="relative overflow-hidden rounded-[28px] p-6 sm:p-10 md:p-34 ring-1 ring-black/1 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.25)]"
-          initial={{ opacity: 0, scale: 0.94, y: 40 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
-            duration: 1.4,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 1.5,
+            ease: SOFT_EASE,
           }}
           viewport={{ once: true, amount: 0.4 }}
         >
-
-          {/* Header with smooth staggered fade-up */}
+          {/* Header with smooth, light stagger */}
           <motion.div
             className="mx-auto max-w-3xl text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.6 }}
-            variants={{
-              hidden: { opacity: 0, y: 40 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1.2,
-                  ease: [0.22, 1, 0.36, 1],
-                  staggerChildren: 0.15,
-                },
-              },
-            }}
+            variants={fadeParent}
           >
             <motion.span
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
+              variants={fadeChild}
               className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1 text-lg font-semibold tracking-widest text-slate-700 ring-1 ring-black/5 shadow-sm"
             >
               CHILD MONITORING
             </motion.span>
 
             <motion.h2
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
+              variants={fadeChild}
               className="mt-6 text-4xl sm:text-6xl md:text-6xl tracking-tight text-slate-600"
             >
               Advanced Child Monitoring
@@ -136,14 +137,7 @@ export default function FeatureShowCase() {
             </motion.h2>
 
             <motion.p
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
+              variants={fadeChild}
               className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-slate-500"
             >
               Monitor calls, messages, social media, photos, videos, and
@@ -152,14 +146,7 @@ export default function FeatureShowCase() {
             </motion.p>
 
             <motion.button
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
-                },
-              }}
+              variants={fadeChild}
               type="button"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-900 ring-1 ring-black/10 shadow-sm hover:bg-slate-50"
             >
@@ -167,9 +154,8 @@ export default function FeatureShowCase() {
             </motion.button>
           </motion.div>
 
-          {/* Logos – marquee remains as-is */}
+          {/* Logos – marquee */}
           <div className="mt-10 -mx-10 lg:-mx-30 mb-4">
-            
             <div className="space-y-8 px-4 sm:px-8">
               <LogoRow logos={logosRow1} direction="left" />
               <LogoRow logos={logosRow2} direction="right" />
