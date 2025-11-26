@@ -56,7 +56,7 @@ const Navbar = () => {
                 Why us?
               </Link>
               <Link
-                to="/reviews="
+                to="/review"
                 className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors"
               >
                 Review

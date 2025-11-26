@@ -27,7 +27,7 @@ const RatingSummary: React.FC = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8 mt-4 mb-16">
+    <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8">
       <WavyBackground
         containerClassName="absolute inset-0 -z-10 h-full w-full"
         className="w-full h-full"

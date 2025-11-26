@@ -6,16 +6,16 @@ const fadeUpContainer = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.2,
+      duration: 0.6,
       ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
       when: "beforeChildren",
-      staggerChildren: 0.15,
+      staggerChildren: 0.25,
     },
   },
 };
 
 const fadeUpItem = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,

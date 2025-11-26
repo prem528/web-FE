@@ -10,7 +10,7 @@ By purchasing IONMONITOR, the subscriber takes the full responsibility for makin
 it may result in severe penalties (monetary & criminal) imposed on the violator. IONMONITOR cannot be held responsible if the subscriber chooses to monitor a device against his/her state or country laws.`;
 
   return (
-    <footer className="relative py-8 px-4 sm:px-6 bg-[url('/topbg10.avif')] bg-cover overflow-hidden">
+    <footer className="relative py-8 px-4 sm:px-6 bg-[url('/topbg10.avif')] bg-cover overflow-hidden bg-black">
       {/* MAIN CONTENT */}
       <div className="relative max-w-7xl mx-auto z-10 mb-20">
         {/* Top grid – always 2 columns on small, then 3/5 on larger screens */}
