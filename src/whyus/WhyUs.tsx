@@ -5,14 +5,15 @@ import HeroSection from "./components/HeroSection";
 import HistorySection from "./components/HistorySection";
 import UniqueSection from "./components/UniqueSection";
 import Footer from "@/layout/Footer";
+import HorizontalCTA from "./components/HorizontalCTA";
   
 
 const WhyUs = () => {
   return (
     <GradientBackground>
       <HeroSection />
+      <HorizontalCTA/>
       <HistorySection />
-      
       <FeaturesSection />
       <UniqueSection />
       <ComparisonSection />

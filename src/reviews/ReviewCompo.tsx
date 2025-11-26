@@ -2,10 +2,8 @@ import { useMemo, useState } from "react";
 import { Star, Filter, Search, Calendar, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { format } from "date-fns";
-import ReviewForm from "./ReviewForm";
-
+ 
 export interface ListReview {
   id: number;
   review_pgaeId?: number;
@@ -238,21 +236,16 @@ const ReviewCompo = () => {
           {filteredReviews.map((review) => (
             <div
               key={review.id}
-              className="
-    relative overflow-hidden
-    rounded
-    bg-slate-800/90
-    shadow-[0_18px_45px_rgba(0,0,0,0.9)]
-    transition-all duration-300
-    hover:-translate-y-1 hover:shadow-[0_26px_70px_rgba(0,0,0,1)]
-  "
+              className="relative overflow-hidden bg-gray-800
+              rounded-xl  shadow-[0_18px_45px_rgba(0,0,0,0.9)] 
+              transition-all duration-300"
             >
               {/* MAIN FLEX WRAPPER */}
               <div className="flex flex-col sm:flex-row h-[260px] sm:h-[280px]">
                 {/* LEFT – IMAGE */}
                 <div className="sm:w-1/3 w-full h-full">
                   <img
-                    src="/feedback12.jpg"
+                    src="/UX2.jpg"
                     alt="Customer review"
                     className="w-full h-full object-cover rounded-l sm:rounded-none"
                     draggable="false"

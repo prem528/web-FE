@@ -38,8 +38,7 @@ export default function HomePage() {
   return (
     <GradientBackground>
       <HeroSection />
-
-      <section className="w-full pt-16 md:pt-28">
+      <section className="w-full">
         <div className="mx-auto max-w-[1500px] py-12 md:py-20">
           {/* Card container with smooth pop-in (same feel as FinanceHero) */}
           <motion.div className="rounded-[32px] backdrop-blur-xl ring-1 ring-white/10 border border-slate-800 bg-white/5 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.5)] px-4 sm:px-8 lg:px-12 py-12 md:py-20">
@@ -149,7 +148,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <ShowcasePanel src="/desktop1.png" alt="Dashboard Preview" />
       <ControlFeatures />
       <FeatureshowCase />
@@ -158,7 +156,6 @@ export default function HomePage() {
       <InsightsSections />
       <Testimonials />
       <RatingSummary />
-
       <Footer />
     </GradientBackground>
   );

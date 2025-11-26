@@ -40,7 +40,7 @@ const RatingSummary: React.FC = () => {
 
       {/* Card with smooth pop-in */}
       <motion.div
-        className="backdrop-blur-lg rounded-3xl p-6 sm:p-10 lg:p-16 text-white border border-white"
+        className="backdrop-blur-lg rounded-3xl p-6 sm:p-10 lg:p-16 text-white border-3 border-gray-500"
         initial={{ opacity: 0, scale: 0.94, y: 40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{

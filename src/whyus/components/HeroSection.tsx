@@ -1,72 +1,43 @@
-import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const HeroSection = () => {
-  const features = [
-    "24/7 Live Chat Support",
-    "24/7 Phone Call Support",
-    "Physical Office",
-    "High Touch Communication",
-    "Committed to Quality",
-  ];
 
   return (
-    <section className="text-white py-20 px-6 relative overflow-hidden bg-[url('/topbg11.avif')] bg-cover">
-      <div
-        className="absolute inset-0 opacity-50"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      ></div>
+    <section className="text-white py-20 px-6 relative overflow-hidden bg-[url('/square.svg')] bg-black bg-cover">
+ 
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10 pt-10">
         {/* Left content – smooth fade/slide up */}
         <motion.div
-          className="space-y-8"
+          className="space-y-8 -mt-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4, ease: SOFT_EASE }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          <div>
-            <h1 className="text-5xl text-gray-100 mb-6 leading-tight">
-              WHY CHOOSE US?
+          <div className="space-y-5 max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold leading-tight">
+              <span className="text-gray-200">Why Choose</span>{" "}
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
+                Us ?
+              </span>
             </h1>
-            <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-              There are lots of monitoring solutions out there and they all look
-              similar, so why ask yourself:
-            </p>
-            <div className="bg-slate-700/50 p-6 rounded-lg border-l-4 border-amber-500">
-              <p className="text-xl italic">
-                "If all these products are the same than,{" "}
-                <span className="text-amber-400 font-semibold">
-                  why should I choose the ion-MONITOR
-                </span>
-                ?"
-              </p>
-              <p className="text-sm text-slate-400 mt-2">- user</p>
-            </div>
-          </div>
 
-          <div className="space-y-4">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center space-x-3 text-lg"
-              >
-                <Check className="w-6 h-6 text-green-400 flex-shrink-0" />
-                <span>{feature}</span>
-              </div>
-            ))}
+            <p className="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed text-justify">
+              Your child’s security deserves more than just tracking — it
+              deserves a smart, reliable, future-ready platform. ION-Monitor
+              gives parents complete visibility into their child’s digital world
+              with advanced monitoring tools powered by real-time data, AI-based
+              analysis, and seamless cloud sync. Stay informed, stay confident,
+              and stay connected with the app trusted by thousands of families.
+            </p>
           </div>
         </motion.div>
 
         {/* Right image */}
-        <div
-          className="relative z-10 flex justify-center lg:justify-end"
-        >
+        <div className="relative z-10 flex justify-center lg:justify-end">
           <img
             src="/userprofile.png"
             alt="Monitoring Preview"
