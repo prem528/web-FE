@@ -114,7 +114,7 @@ import { World } from "@/components/ui/globe";
   return (
     <div>
       {/* This wrapper controls the shape */}
-      <div className=" w-[850px] h-[700px]   ">
+      <div className="lg:w-[850px] lg:h-[700px] w-[380px] h-[380px] ">
         <World data={sampleArcs} globeConfig={globeConfig} />
       </div>
     </div>

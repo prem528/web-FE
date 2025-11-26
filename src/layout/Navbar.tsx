@@ -36,7 +36,6 @@ const Navbar = () => {
 
               <div
                 className="relative"
- 
               >
                 <button className="flex items-center text-gray-300 hover:text-white px-3 py-2 text-sm font-medium cursor-pointer">
                   Features
@@ -208,7 +207,7 @@ const Navbar = () => {
               Why us?
             </Link>
             <Link
-              to="/reviews"
+              to="/review"
               className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors"
               onClick={() => setMenuOpen(false)}
             >

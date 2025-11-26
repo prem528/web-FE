@@ -5,7 +5,7 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const HistorySection = () => {
   return (
-    <section className="relative py-20 px-6 overflow-hidden">
+    <section className="relative py-20 lg:px-6 overflow-hidden">
       {/* Background gradient + glow */}
       <div className="absolute inset-0" />
       <div className="pointer-events-none absolute inset-0 opacity-30 bg-[linear-gradient(to_bottom_right,rgba(148,163,184,0.25)_1px,transparent_1px)]" />
@@ -95,7 +95,7 @@ const HistorySection = () => {
                     <Users className="w-6 h-6 text-emerald-300" />
                   </div>
                   <div className="text-2xl font-bold text-slate-50 leading-tight">
-                    1M+ Users
+                    10k+ Users
                   </div>
                   <div className="text-xs text-emerald-100/80 mt-1 uppercase tracking-[0.16em]">
                     Trusted Worldwide
@@ -106,7 +106,7 @@ const HistorySection = () => {
           </div>
 
           {/* RIGHT SIDE IMAGE */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative lg:flex justify-center lg:justify-end hidden">
             <div className="relative rounded-[32px]">
               <img
                 src="https://img.freepik.com/free-vector/company-employees-use-web-search-find-ideas-doing-business-company_1150-43196.jpg?w=740"

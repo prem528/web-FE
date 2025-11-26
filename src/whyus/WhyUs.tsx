@@ -7,7 +7,6 @@ import UniqueSection from "./components/UniqueSection";
 import Footer from "@/layout/Footer";
 import HorizontalCTA from "./components/HorizontalCTA";
   
-
 const WhyUs = () => {
   return (
     <GradientBackground>

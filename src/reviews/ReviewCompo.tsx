@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
-import { Star, Filter, Search, Calendar, User } from "lucide-react";
+import { Star, Filter, Search, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { format } from "date-fns";
- 
+
 export interface ListReview {
   id: number;
   review_pgaeId?: number;
@@ -123,54 +123,8 @@ const ReviewCompo = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Header Section */}
-      {/* <div className="text-white py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-              {data.heading}
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
-              {data.paragraph}
-            </p>
-
-            <div className="mt-10 flex items-center justify-center gap-6  border border-slate-700/70 rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto shadow-[0_18px_45px_rgba(15,23,42,0.85)]">
-              {totalReviews > 0 && (
-                <>
-                  <div className="text-center">
-                    <div className="text-4xl sm:text-5xl font-bold text-amber-400">
-                      {averageRating.toFixed(1)}
-                    </div>
-                    <div className="flex justify-center my-2">
-                      {renderStars(Math.round(averageRating), "w-6 h-6")}
-                    </div>
-                    <div className="text-slate-300 text-sm sm:text-base">
-                      Average Rating
-                    </div>
-                  </div>
-                  <div className="h-14 w-px bg-slate-700 hidden sm:block" />
-                  <div className="text-center">
-                    <div className="text-4xl sm:text-5xl font-bold text-sky-400">
-                      {totalReviews}
-                    </div>
-                    <div className="text-slate-300 text-sm sm:text-base mt-1">
-                      Total Reviews
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* Content Section */}
-      <div
-        className="
-          relative
-          max-w-7xl mx-auto px-6 py-10
-        "
-      >
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Filters and Search */}
         <div className="flex flex-col md:flex-row gap-4 mb-10">
           <div className="relative flex-1">
@@ -232,58 +186,58 @@ const ReviewCompo = () => {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 mb-10">
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mb-10">
           {filteredReviews.map((review) => (
             <div
               key={review.id}
-              className="relative overflow-hidden bg-gray-800
-              rounded-xl  shadow-[0_18px_45px_rgba(0,0,0,0.9)] 
-              transition-all duration-300"
+              className="relative overflow-hidden bg-gray-800 rounded-xl shadow-[0_18px_45px_rgba(0,0,0,0.9)] transition-all duration-300"
             >
-              {/* MAIN FLEX WRAPPER */}
-              <div className="flex flex-col sm:flex-row h-[260px] sm:h-[280px]">
+              {/* Card Layout – Vertical on mobile, side-by-side on md+ */}
+              <div className="flex flex-col sm:flex-row h-full">
                 {/* LEFT – IMAGE */}
-                <div className="sm:w-1/3 w-full h-full">
+                <div className="w-full sm:w-1/3">
                   <img
                     src="/UX2.jpg"
                     alt="Customer review"
-                    className="w-full h-full object-cover rounded-l sm:rounded-none"
+                    className="w-full h-40 sm:h-full object-cover sm:rounded-l-xl rounded-t-xl sm:rounded-t-none"
                     draggable="false"
                   />
                 </div>
 
                 {/* RIGHT – TEXT CONTENT */}
-                <div className="sm:w-2/3 w-full flex flex-col p-4">
+                <div className="w-full sm:w-2/3 flex flex-col p-4 sm:p-5">
                   {/* NAME + RATING + DATE */}
-                  <div className="flex items-start justify-between mb-1">
-                    <div>
-                      <p className="text-xl font-semibold text-slate-50">
-                        {review.name}
-                      </p>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1">
+                        <p className="text-lg sm:text-xl font-semibold text-slate-50">
+                          {review.name}
+                        </p>
 
-                      <div className="flex items-center gap-2 mt-4">
-                        <div className="flex">
-                          {renderStars(review.rating, "w-5 h-5")}
+                        <div className="flex items-center gap-2 mt-2">
+                          <div className="flex">
+                            {renderStars(review.rating, "w-4 h-4 sm:w-5 sm:h-5")}
+                          </div>
+                          <span className="text-sm sm:text-base text-slate-400">
+                            {review.rating.toFixed(1)} / 5
+                          </span>
                         </div>
-                        <span className="text-lg text-slate-400">
-                          {review.rating.toFixed(1)} / 5
-                        </span>
                       </div>
-                    </div>
 
-                    <div className="flex items-center text-slate-400">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {format(new Date(review.createdAt), "dd/MM/yyyy")}
+                      <div className="flex items-center text-slate-400 text-xs sm:text-sm whitespace-nowrap">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        {format(new Date(review.createdAt), "dd/MM/yyyy")}
+                      </div>
                     </div>
                   </div>
 
-                  {/* TITLE + CONTENT  */}
-                  <div className="mt-1">
-                    <h4 className="text-slate-300 text-xl font-medium leading-snug line-clamp-2">
+                  {/* TITLE + CONTENT */}
+                  <div className="mt-3 space-y-1">
+                    <h4 className="text-slate-200 text-sm sm:text-base md:text-lg font-medium leading-snug line-clamp-2">
                       {review.title}
                     </h4>
 
-                    <p className="text-[13px] text-slate-300/90 leading-relaxed mt-1 line-clamp-4">
+                    <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed line-clamp-4">
                       {review.content}
                     </p>
                   </div>

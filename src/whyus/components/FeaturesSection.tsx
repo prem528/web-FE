@@ -5,7 +5,7 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 const FeaturesSection = () => {
   return (
     <section
-      className="relative py-10 px-6 overflow-hidden"
+      className="relative py-10 lg:px-6 overflow-hidden"
       style={{
         backgroundImage: `url('topbg10.avif')`,
         backgroundBlendMode: "soft-light",
@@ -34,7 +34,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Right side card */}
-          <div className="space-y-6 ml-12 border border-slate-600 p-8 rounded-2xl py-6 pb-18">
+          <div className="space-y-6 lg:ml-12 border border-slate-600 p-8 rounded-2xl py-6 pb-18">
             {/* Label */}
             <div className="inline-flex items-center gap-2 rounded-lg border border-blue-100 bg-white/90 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500 shadow-sm">
               Human-first support
@@ -46,7 +46,7 @@ const FeaturesSection = () => {
                 Things we do <span className="text-blue-600">better</span> than
                 ordinary apps.
               </h2>
-              <p className="max-w-xl text-slate-300 text-sm sm:text-base leading-relaxed text-justify">
+              <p className="max-w-xl lg:text-slate-300 text-sm sm:text-base leading-relaxed text-justify">
                 ION-MONITOR isn’t just another dashboard. It’s a{" "}
                 <span className="font-medium text-slate-100">
                   complete monitoring experience

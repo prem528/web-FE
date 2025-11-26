@@ -153,7 +153,7 @@ const ComparisonSection = () => {
             className="w-full sm:w-auto h-12 bg-linear-to-r from-cyan-500 via-sky-500 to-blue-600 
                        hover:from-cyan-400 hover:via-sky-400 hover:to-blue-500
                        text-white font-semibold rounded-lg text-base sm:text-lg px-10 py-3
-                       shadow-[0_18px_40px_rgba(37,99,235,0.75)] border border-cyan-300/60"
+                        border border-cyan-300/60"
           >
             TRY NOW
           </Button>

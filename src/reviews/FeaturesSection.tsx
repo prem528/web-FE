@@ -1,18 +1,23 @@
 import { motion } from "framer-motion";
 import ReviewForm from "./ReviewForm";
+import type { ListReview } from "./ReviewCompo";
 
 const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const FeaturesSection = () => {
+
+  const handleReviewSubmit = (review: ListReview) => {
+    console.log("Received review:", review);
+  };
+
   return (
     <section
-      className="relative py-10 px-6 overflow-hidden bg-black"
+      className="relative py-10 lg:px-6 overflow-hidden bg-black"
       style={{
         backgroundImage: `url('topbg10.avif')`,
         backgroundBlendMode: "soft-light",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "",
       }}
     >
       <div className="relative max-w-7xl mx-auto py-20">
@@ -34,9 +39,9 @@ const FeaturesSection = () => {
             </div>
           </div>
 
-          {/* Right side card */}
-          <div className="">
-            <ReviewForm/>
+          {/* Right side card  */}
+          <div>
+            <ReviewForm onReviewSubmit={handleReviewSubmit} />
           </div>
         </motion.div>
       </div>
