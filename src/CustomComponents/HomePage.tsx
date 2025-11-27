@@ -38,7 +38,7 @@ export default function HomePage() {
   return (
     <GradientBackground>
       <HeroSection />
-      <section className="w-full">
+      <section className="w-full bg-[#020512]">
         <div className="mx-auto max-w-[1500px] py-12 md:py-20">
           {/* Card container with smooth pop-in (same feel as FinanceHero) */}
           <motion.div className="rounded-[32px] backdrop-blur-xl ring-1 ring-white/10 border border-slate-800 bg-white/5 shadow-[0_-20px_60px_-10px_rgba(0,0,0,0.5)] px-4 sm:px-8 lg:px-12 py-12 md:py-20">

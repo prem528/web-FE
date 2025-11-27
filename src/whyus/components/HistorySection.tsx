@@ -5,7 +5,7 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const HistorySection = () => {
   return (
-    <section className="relative py-20 lg:px-6 overflow-hidden">
+    <section className="relative py-20 lg:px-6 overflow-hidden bg-[#020512]">
       {/* Background gradient + glow */}
       <div className="absolute inset-0" />
       <div className="pointer-events-none absolute inset-0 opacity-30 bg-[linear-gradient(to_bottom_right,rgba(148,163,184,0.25)_1px,transparent_1px)]" />
@@ -52,9 +52,9 @@ const HistorySection = () => {
                   Later,{" "}
                   <span className="font-semibold text-slate-100">ONEPSR</span>{" "}
                   was recognized with an India award together with{" "}
-                  <span className="font-semibold text-slate-100">
+           
                     ION-MONITOR
-                  </span>
+                 
                   , reflecting our focus on innovation and real-world
                   reliability.
                 </p>

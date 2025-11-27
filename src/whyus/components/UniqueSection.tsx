@@ -33,7 +33,7 @@ const UniqueSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover">
+    <section className="py-24 px-6 bg-[url('/topbg11.avif')] bg-cover bg-[#020512]">
       <div className="max-w-7xl mx-auto">
         
         {/* Title Section (smooth slide-up) */}

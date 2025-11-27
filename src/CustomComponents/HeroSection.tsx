@@ -29,7 +29,7 @@ const fadeUpItem = {
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden text-white bg-[url('/square.svg')] bg-cover">
+    <section className="relative overflow-hidden text-white bg-[url('/square.svg')] bg-cover bg-[#020512]">
       <div className="relative max-w-7xl mx-auto mb-10 mt-10 px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 flex flex-col md:flex-row items-center justify-between gap-10 lg:gap-12">
 
         {/* Left text section – smooth slide up on first visit */}

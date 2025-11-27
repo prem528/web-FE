@@ -43,7 +43,7 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section className="pb-20 px-4 sm:px-6 lg:px-10 relative">
+    <section className="pb-20 px-4 sm:px-6 lg:px-10 relative bg-[#020512]">
       <motion.div
         className="relative max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 80 }}

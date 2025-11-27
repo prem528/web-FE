@@ -122,7 +122,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
 
 const InsightsSections: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#020512]">
       <FeatureBlock
         title="Real-Time insights"
         description="Access real-time data instantly to make quick decisions and adapt swiftly to market shifts."

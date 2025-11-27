@@ -27,9 +27,9 @@ const RatingSummary: React.FC = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8">
+    <div className="relative px-4 sm:px-8 lg:px-24 xl:px-40 py-8 ">
       <WavyBackground
-        containerClassName="absolute inset-0 -z-10 h-full w-full"
+        containerClassName="absolute inset-0 -z-10 h-full w-full bg-[#020512]"
         className="w-full h-full"
         backgroundFill="#030712" // dark base under waves
         blur={18}

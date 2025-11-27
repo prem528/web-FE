@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="py-20 overflow-hidden">
+    <section className="py-20 overflow-hidden bg-[#020512]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-28 py-12">
         <motion.h2
           className="text-5xl text-gray-400 text-center mb-8 sm:mb-12"

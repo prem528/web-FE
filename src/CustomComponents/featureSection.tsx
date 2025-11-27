@@ -91,7 +91,7 @@ const ControlFeatures = () => {
     features.find((f) => f.id === activeFeatureId) || features[0];
 
   return (
-    <div className="mt-26 px-4">
+    <div className="lg:mt-26 py-20 lg:py-2 px-4 bg-[#020512]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

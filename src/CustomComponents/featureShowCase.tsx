@@ -100,7 +100,7 @@ const LogoRow: React.FC<{
 
 export default function FeatureShowCase() {
   return (
-    <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-10">
+    <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-10 bg-[#020512]">
       <div className="mx-auto max-w-[1400px]">
         {/* Card with soft, light pop-in */}
         <motion.div

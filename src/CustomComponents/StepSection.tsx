@@ -36,10 +36,10 @@ const StepsSection = ({
     steps.length <= 1 ? 1 : activeStep / (steps.length - 1 || 1);
 
   return (
-    <div className="pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8 bg-[#020512]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Image with Transition */}
+     
           {/* Left Side - Image with Transition */}
           <div className="justify-center items-center w-full relative h-[540px] hidden lg:block">
             {steps.length > 0 && (
