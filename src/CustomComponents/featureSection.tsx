@@ -23,7 +23,7 @@ const ControlFeatures = () => {
       icon: <FullscreenIcon className="w-5 h-5" />,
       color: "text-orange-500",
       bgColor: "bg-orange-100",
-      imageSrc: "screenshots.jpg", 
+      imageSrc: "ss.png", 
       description:
         "The most powerful feature of our ion monitor application is the function of capturing screenshots. This tool takes a screenshot of the device screen",
     },
@@ -43,7 +43,7 @@ const ControlFeatures = () => {
       icon: <Mic className="w-5 h-5" />,
       color: "text-green-500",
       bgColor: "bg-green-100",
-      imageSrc: "/surrounding.jpg",
+      imageSrc: "/surrounding.png",
       description:
         "In Ion monitor helps parents to keep aware of their child’s surroundings by safely activating their phone’s microphone to record nearby sounds, ensuring their safety and peace of mind.",
     },
@@ -53,7 +53,7 @@ const ControlFeatures = () => {
       icon: <Camera className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
-      imageSrc: "/photos1.jpg",
+      imageSrc: "/photos11.png",
       description:
         "It instantly clicks photos of your child’s environment to have a clear view. It helps you know where they are and with whom for parents’ peace of mind.",
     },
@@ -63,7 +63,7 @@ const ControlFeatures = () => {
       icon: <Phone className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
-      imageSrc: "/callrecord.png",
+      imageSrc: "/recording.png",
       description:
         "The call recording feature of our ion monitor allows the parents to access and store both incoming and outgoing phone calls.",
     },
@@ -73,7 +73,7 @@ const ControlFeatures = () => {
       icon: <Search className="w-5 h-5" />,
       color: "text-red-500",
       bgColor: "bg-red-100",
-      imageSrc: "/keywords.jpg",
+      imageSrc: "/keyword.png",
       description:
         "This feature keeps an eye on the words or phrases typed, searched, and texted on your child’s smartphone.",
     },

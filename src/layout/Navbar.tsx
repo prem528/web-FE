@@ -1,20 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // ⬅️ add this
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Mail, Phone, CircleUser, MapPin } from "lucide-react";
+import {
+  Menu,
+  X,
+ 
+} from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [featuresOpen, setFeaturesOpen] = useState(false);
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  // const [featuresOpen, setFeaturesOpen] = useState(false);
+  // const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   return (
     <nav className="fixed top-1 left-2 right-2 z-50 backdrop-blur bg-slate-800/10  rounded-xl shadow-md lg:py-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex items-center justify-between h-16">
-
           {/* Logo */}
-          {/* <div className="flex items-center cursor-pointer">
+          <div className="flex items-center cursor-pointer">
             <Link to="/">
               <img
                 src="/ionlogo.png"
@@ -22,7 +25,7 @@ const Navbar = () => {
                 className="h-10 mr-2 sm:w-96 md:w-auto"
               />
             </Link>
-          </div> */}
+          </div>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:block">
@@ -34,9 +37,7 @@ const Navbar = () => {
                 Home
               </Link>
 
-              <div
-                className="relative"
-              >
+              {/* <div className="relative">
                 <button className="flex items-center text-gray-300 hover:text-white px-3 py-2 text-sm font-medium cursor-pointer">
                   Features
                   <ChevronDown
@@ -45,8 +46,8 @@ const Navbar = () => {
                     }`}
                   />
                 </button>
-                {/* put your desktop dropdown here if needed */}
-              </div>
+              
+              </div> */}
 
               <Link
                 to="/whyus"
@@ -76,7 +77,11 @@ const Navbar = () => {
               className="text-gray-300 hover:text-white focus:outline-none"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              {menuOpen ? (
+                <X className="w-7 h-7" />
+              ) : (
+                <Menu className="w-7 h-7" />
+              )}
             </button>
           </div>
 
@@ -87,7 +92,10 @@ const Navbar = () => {
               Try now
             </Button>
 
-            <Button asChild className="bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-lg transition-all duration-300 cursor-pointer">
+            <Button
+              asChild
+              className="bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-lg transition-all duration-300 cursor-pointer"
+            >
               <Link to="https://dash.ionmonitor.com/pricing">Buy now</Link>
             </Button>
           </div>
@@ -98,9 +106,17 @@ const Navbar = () => {
       {menuOpen && (
         <div className="lg:hidden bg-slate-800/95 rounded-b-xl shadow-lg px-4 pt-4 py-4 max-h-[80vh] overflow-y-auto">
           <div className="flex flex-col space-y-2 mb-4">
+            <Link
+              to="/"
+              className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors"
+              onClick={() => setMenuOpen(false)}
+            >
+              {" "}
+              Home
+            </Link>
 
             {/* FEATURES link */}
-            <button
+            {/* <button
               className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors flex items-center"
               onClick={() => {
                 setSubMenuOpen(!subMenuOpen);
@@ -113,10 +129,10 @@ const Navbar = () => {
                   featuresOpen ? "rotate-180" : "rotate-0"
                 }`}
               />
-            </button>
+            </button> */}
 
             {/* Submenu */}
-            {subMenuOpen && (
+            {/* {subMenuOpen && (
               <div className="rounded-b-xl px-4">
                 <div className="flex flex-col space-y-2 mb-1">
                   <Link
@@ -196,7 +212,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* Other Menu Items */}
             <Link
@@ -227,7 +243,10 @@ const Navbar = () => {
             <Button className="w-full bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium rounded-md text-base transition-all duration-300 cursor-pointer">
               Try now
             </Button>
-            <Button asChild className="w-full bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-base transition-all duration-300 cursor-pointer">
+            <Button
+              asChild
+              className="w-full bg-transparent border border-white text-white hover:text-blue-400 hover:bg-transparent font-medium rounded-md text-base transition-all duration-300 cursor-pointer"
+            >
               <Link to="https://dash.ionmonitor.com/pricing">Buy now</Link>
             </Button>
           </div>

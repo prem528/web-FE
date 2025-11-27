@@ -5,20 +5,19 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 const HeroSection = () => {
   return (
     <section className="text-white relative overflow-hidden bg-[url('/square.svg')] bg-black bg-cover">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
           {/* Left content – smooth fade/slide up */}
           <motion.div
             className="space-y-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }} // mount-based animation (no whileInView)
             transition={{ duration: 1.4, ease: SOFT_EASE }}
-            viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="space-y-5 max-w-2xl mx-auto lg:mx-0 mt-10">
+            <div className="space-y-5 max-w-2xl mx-auto lg:mx-0 mt-4">
               <h1 className="text-4xl lg:text-6xl xl:text-7xl font-semibold leading-tight">
                 <span className="text-gray-200">Why Choose</span>{" "}
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
                   Us ?
                 </span>
               </h1>
@@ -39,11 +38,10 @@ const HeroSection = () => {
           <motion.div
             className="relative z-10 flex justify-center lg:justify-end"
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, ease: SOFT_EASE, delay: 0.1 }}
-            viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="relative max-w-md w-full">
+            <div className="relative max-w-md w-full mt-10">
               <img
                 src="/userprofile.png"
                 alt="Monitoring Preview"
@@ -51,8 +49,7 @@ const HeroSection = () => {
               />
               {/* Bottom gradient fade */}
               <div
-                className="pointer-events-none absolute inset-x-0 -bottom-1 h-16
-                bg-linear-to-b from-transparent via-[#000000]/95 to-[#0a0c12]"
+                className="pointer-events-none absolute inset-x-0 -bottom-1 h-16 bg-gradient-to-b from-transparent via-[#000000]/95 to-[#0a0c12]"
               />
             </div>
           </motion.div>

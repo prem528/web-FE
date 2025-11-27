@@ -19,19 +19,19 @@ export default function HomePage() {
       heading: "Install ionMonitor App",
       paragraph:
         "Download and install the ionMonitor app on your child’s device in just a few taps.",
-      imageSrc: "/1.png",
+      imageSrc: "/4.png",
     },
     {
       heading: "Connect Your Dashboard",
       paragraph:
         "Log in to your secure dashboard and connect the device using your unique license.",
-      imageSrc: "/3.png",
+      imageSrc: "/9.png",
     },
     {
       heading: "Monitor & Stay Informed",
       paragraph:
         "View calls, messages, locations and more in real-time with intuitive graphs and logs.",
-      imageSrc: "/6.png",
+      imageSrc: "/7878.png",
     },
   ];
 
@@ -151,7 +151,7 @@ export default function HomePage() {
       <ShowcasePanel src="/desktop1.png" alt="Dashboard Preview" />
       <ControlFeatures />
       <FeatureshowCase />
-      <FinanceHero imageSrc="/screen2.png" />
+      <FinanceHero imageSrc="/screen3.png" />
       <StepsSection heading="How ionMonitor Works" steps={stepsData} />
       <InsightsSections />
       <Testimonials />

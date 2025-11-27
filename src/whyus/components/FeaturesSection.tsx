@@ -28,7 +28,7 @@ const FeaturesSection = () => {
               <img
                 src="/customer.jpg"
                 alt="ION-MONITOR Preview"
-                className="w-full h-150 object-cover"
+                className="w-full h-100 md:h-150 object-cover"
               />
             </div>
           </div>

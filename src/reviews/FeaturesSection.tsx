@@ -12,13 +12,7 @@ const FeaturesSection = () => {
 
   return (
     <section
-      className="relative py-10 lg:px-6 overflow-hidden bg-black"
-      style={{
-        backgroundImage: `url('topbg10.avif')`,
-        backgroundBlendMode: "soft-light",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
+      className="relative py-10 lg:px-6 overflow-hidden bg-[#020512]"
     >
       <div className="relative max-w-7xl mx-auto py-20">
         <motion.div

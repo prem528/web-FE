@@ -63,26 +63,15 @@ const initialReviews: ListReview[] = [
   },
 ];
 
-const initialReviewPage: ReviewPage = {
-  id: 1,
-  heading: "What Our Customers Say",
-  paragraph:
-    "Real feedback from parents who use ION-MONITAR every day to keep their loved ones safe and informed.",
-  pageRating: 4.7,
-  listReview: initialReviews,
-  createdAt: "2025-11-10T00:00:00.000Z",
-  updatedAt: "2025-11-20T00:00:00.000Z",
-};
+ 
 
 const ReviewCompo = () => {
   const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [data] = useState<ReviewPage>(initialReviewPage);
-  const [reviews, setReviews] = useState<ListReview[]>(initialReviews);
+ 
+  const [reviews,  ] = useState<ListReview[]>(initialReviews);
 
-  const handleNewReview = (newReview: ListReview) => {
-    setReviews((prev) => [newReview, ...prev]);
-  };
+ 
 
   const filteredReviews = useMemo(() => {
     return reviews.filter((review) => {
@@ -103,17 +92,12 @@ const ReviewCompo = () => {
     });
   }, [filter, reviews, searchTerm]);
 
-  const averageRating =
-    reviews.length > 0
-      ? reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length
-      : 0;
-
-  const totalReviews = reviews.length;
+ 
 
   const renderStars = (rating: number, size: string = "w-4 h-4") => {
     return [...Array(5)].map((_, i) => (
       <Star
-        key={i}
+        key={1}
         className={`${size} ${
           i < rating ? "fill-amber-400 text-amber-400" : "text-gray-300"
         }`}
@@ -197,7 +181,7 @@ const ReviewCompo = () => {
                 {/* LEFT – IMAGE */}
                 <div className="w-full sm:w-1/3">
                   <img
-                    src="/UX2.jpg"
+                    src="/UX3.jpg"
                     alt="Customer review"
                     className="w-full h-40 sm:h-full object-cover sm:rounded-l-xl rounded-t-xl sm:rounded-t-none"
                     draggable="false"
