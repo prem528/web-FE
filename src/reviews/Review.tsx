@@ -1,9 +1,10 @@
 import Footer from "@/layout/Footer";
 import HeroSection from "./HeroSection";
 import ReviewCompo from "./ReviewCompo";
-import FeaturesSection from "./FeaturesSection";
+ 
 import RatingSummary from "@/CustomComponents/RatingSummary";
 import GradientBackground from "@/CustomComponents/GradientBackground";
+import ReviewSection from "./ReviewSection";
 
 export default function Review() {
   return (
@@ -11,7 +12,7 @@ export default function Review() {
       <GradientBackground>
         <HeroSection />
         <RatingSummary />
-        <FeaturesSection />
+        <ReviewSection/>
         <ReviewCompo />
         <Footer />
       </GradientBackground>

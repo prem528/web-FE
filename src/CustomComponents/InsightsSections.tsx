@@ -66,7 +66,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
                     transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
                   },
                 }}
-                className="text-4xl sm:text-5xl text-gray-200 leading-tight mb-4"
+                className="text-4xl text-gray-200 leading-tight mb-4"
               >
                 {title}
               </motion.h2>
@@ -80,12 +80,12 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
                     transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
                   },
                 }}
-                className="text-base sm:text-lg text-slate-500"
+                className="text-base sm:text-lg text-justify text-slate-500"
               >
                 {description}
               </motion.p>
 
-              <motion.button
+              {/* <motion.button
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -97,7 +97,7 @@ const FeatureBlock: React.FC<FeatureBlockProps> = ({
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-slate-900 shadow-sm ring-1 ring-black/10 hover:bg-slate-50"
               >
                 Learn More
-              </motion.button>
+              </motion.button> */}
             </motion.div>
 
             {/* Image */}
@@ -124,16 +124,19 @@ const InsightsSections: React.FC = () => {
   return (
     <div className="w-full bg-[#020512]">
       <FeatureBlock
-        title="Real-Time insights"
-        description="Access real-time data instantly to make quick decisions and adapt swiftly to market shifts."
+        title="Real-Time Safety Insights"
+        description="Stay instantly informed with real-time updates directly from your child’s smartphone.
+        Every activity—whether it's location changes, app usage, captured photos, or device movements is synced live to your dashboard within seconds.
+        This continuous stream of insights helps you understand your child’s surroundings, identify potential risks early, and take timely action to ensure their safety and well-being at all times."
         imageSrc="/phoness.png"
         imageAlt="Real-time insights preview"
         imageWidth="380px"
       />
 
       <FeatureBlock
-        title="Data-Driven decisions"
-        description="Make confident decisions with comprehensive data analysis, minimizing guesswork."
+        title="All-in-One Profile View"
+        description="Access a complete and organized profile view of your child’s device, including phone details, sync status, installed applications, activity history, and recent monitoring data.
+         Everything is neatly arranged so parents can review important information without confusion. The dashboard gives a holistic understanding of device behavior, helping you track patterns, analyze trends, and confidently stay connected to your child’s digital environment."
         imageSrc="/userprofile.png"
         imageAlt="Data-driven decisions preview"
         imageWidth="500px"

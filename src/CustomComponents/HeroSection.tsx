@@ -21,9 +21,7 @@ export default function HeroSection() {
          
             className="text-base sm:text-lg text-slate-300 mb-8 max-w-xl mx-auto md:mx-0 text-left"
           >
-            Monitor calls, chats, apps, and location in real time. Stay connected,
-            stay informed, and keep your child safe in the digital world – all from
-            one powerful dashboard.
+ The Ion monitor now empowers you with peace of mind and confidence. By providing you with the real-time insights of your child. It provides sophisticated, discreet, and reliable monitoring in the digital world.
           </p>
         </div>
 

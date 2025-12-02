@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import axios from "axios";
 import type { ListReview } from "./ReviewCompo";
 
 interface ReviewFormData {
@@ -23,13 +24,14 @@ interface ReviewFormData {
   rating: number;
 }
 
-const ReviewForm = ({
-  onReviewSubmit,
-}: {
+type ReviewFormProps = {
   onReviewSubmit: (review: ListReview) => void;
-}) => {
+};
+
+const ReviewForm = ({ onReviewSubmit }: ReviewFormProps) => {
   const [hoveredRating, setHoveredRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<ReviewFormData>({
     defaultValues: {
@@ -40,7 +42,7 @@ const ReviewForm = ({
     },
   });
 
-  const onSubmit = (data: ReviewFormData) => {
+  const onSubmit = async (data: ReviewFormData) => {
     if (selectedRating === 0) {
       toast.error(
         "Rating required. Please select a rating before submitting your review."
@@ -48,29 +50,74 @@ const ReviewForm = ({
       return;
     }
 
-    const now = new Date();
-
-    const newReview: ListReview = {
-      id: now.getTime(), // simple unique id
-      review_pgaeId: 1,
+    const newReviewPayload = {
       name: data.name,
       title: data.title,
       rating: selectedRating,
       content: data.content,
       varified: false,
-      createdAt: now.toISOString(),
     };
 
-    // Send the new review back to the parent
-    onReviewSubmit(newReview);
+    try {
+      setLoading(true);
 
-    toast.success(
-      "Review submitted! Thank you for your feedback. Your review has been added."
-    );
+      const res = await axios.post(
+        "https://webback.ionmonitor.com/api/review/frontendapi/userReview",
+        newReviewPayload
+      );
 
-    form.reset();
-    setSelectedRating(0);
-    setHoveredRating(0);
+      // Log once to see exact POST response
+      console.log("POST review response:", res.data);
+
+      const respons = res.data as {
+        success: boolean;
+        page?: { listofreview?: ListReview[] };
+        review?: ListReview;
+      };
+
+      if (respons.success) {
+        // Try to get new review from API if available
+        let newReview: ListReview | undefined;
+
+        if (
+          respons.page &&
+          Array.isArray(respons.page.listofreview) &&
+          respons.page.listofreview.length > 0
+        ) {
+          const list = respons.page.listofreview;
+          newReview = list[list.length - 1];
+        } else if (respons.review) {
+          newReview = respons.review;
+        }
+
+        // Fallback: create a review object from form data
+        if (!newReview) {
+          newReview = {
+            id: Date.now(), // temporary client-side id
+            name: data.name,
+            title: data.title,
+            rating: selectedRating,
+            content: data.content,
+            varified: false,
+            createdAt: new Date().toISOString(),
+          };
+        }
+
+        onReviewSubmit(newReview);
+
+        toast.success("Thank you! Your review has been submitted.");
+      } else {
+        toast.error("Something went wrong while submitting your review.");
+      }
+    } catch (err) {
+      console.error("POST /api/review/frontendapi/userReview failed:", err);
+      toast.error("Unable to submit review. Please try again.");
+    } finally {
+      setLoading(false);
+      form.reset();
+      setSelectedRating(0);
+      setHoveredRating(0);
+    }
   };
 
   const renderStars = () => {
@@ -164,7 +211,7 @@ const ReviewForm = ({
                   <FormLabel>Your Review</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us about your experience with ION-MONITAR..."
+                      placeholder="Tell us about your experience with ION-MONITOR..."
                       className="min-h-[120px]"
                       {...field}
                     />
@@ -177,10 +224,11 @@ const ReviewForm = ({
             <Button
               type="submit"
               size="lg"
-              className="w-full sm:w-auto bg-blue-400 hover:bg-blue-500 cursor-pointer"
+              disabled={loading}
+              className="w-full sm:w-auto bg-blue-400 hover:bg-blue-500 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
               <Send className="w-4 h-4 mr-2" />
-              Submit Review
+              {loading ? "Submitting..." : "Submit Review"}
             </Button>
           </form>
         </Form>

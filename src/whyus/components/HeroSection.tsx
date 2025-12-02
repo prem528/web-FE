@@ -17,12 +17,12 @@ const HeroSection = () => {
             <div className="space-y-5 max-w-2xl mx-auto lg:mx-0 mt-4">
               <h1 className="text-4xl lg:text-6xl xl:text-7xl font-semibold leading-tight">
                 <span className="text-gray-200">Why Choose</span>{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
                   Us ?
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed text-justify lg:text-left">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed text-justify  ">
                 Your child’s security deserves more than just tracking — it
                 deserves a smart, reliable, future-ready platform. ION-Monitor
                 gives parents complete visibility into their child’s digital
@@ -49,7 +49,7 @@ const HeroSection = () => {
               />
               {/* Bottom gradient fade */}
               <div
-                className="pointer-events-none absolute inset-x-0 -bottom-1 h-16 bg-gradient-to-b from-transparent via-[#000000]/95 to-[#0a0c12]"
+                className="pointer-events-none absolute inset-x-0 -bottom-1 h-16 bg-linear-to-b from-transparent via-[#000000]/95 to-[#0a0c12]"
               />
             </div>
           </motion.div>

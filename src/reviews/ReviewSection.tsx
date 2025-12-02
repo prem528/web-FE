@@ -4,7 +4,7 @@ import type { ListReview } from "./ReviewCompo";
 
 const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
-const FeaturesSection = () => {
+const ReviewSection = () => {
 
   const handleReviewSubmit = (review: ListReview) => {
     console.log("Received review:", review);
@@ -43,4 +43,4 @@ const FeaturesSection = () => {
   );
 };
 
-export default FeaturesSection;
+export default ReviewSection;

@@ -18,24 +18,14 @@ const ControlFeatures = () => {
 
   const features = [
     {
-      id: "screenshots",
-      title: "Capture Screenshots",
-      icon: <FullscreenIcon className="w-5 h-5" />,
-      color: "text-orange-500",
-      bgColor: "bg-orange-100",
-      imageSrc: "ss.png", 
-      description:
-        "The most powerful feature of our ion monitor application is the function of capturing screenshots. This tool takes a screenshot of the device screen",
-    },
-    {
       id: "record-screen",
-      title: "Record Screen",
+      title: "Live Record",
       icon: <Video className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
       imageSrc: "/liverecording.png",
       description:
-        "This allows parents to capture a real-time video recording of the smartphone of their child. And provide a clear view of the device activities.",
+        "This allows parents to capture a real-time video recording of the smartphone of their child & provide a clear view of the device activities.",
     },
     {
       id: "record-surround",
@@ -48,14 +38,14 @@ const ControlFeatures = () => {
         "In Ion monitor helps parents to keep aware of their child’s surroundings by safely activating their phone’s microphone to record nearby sounds, ensuring their safety and peace of mind.",
     },
     {
-      id: "take-photos",
-      title: "Take Photos",
+      id: "live-photos",
+      title: "Live Photos",
       icon: <Camera className="w-5 h-5" />,
       color: "text-blue-500",
       bgColor: "bg-blue-100",
       imageSrc: "/photos11.png",
       description:
-        "It instantly clicks photos of your child’s environment to have a clear view. It helps you know where they are and with whom for parents’ peace of mind.",
+        "Captures photos from your child’s phone and sends them instantly to your dashboard so you can see their surroundings in real time.",
     },
     {
       id: "record-calls",
@@ -104,16 +94,14 @@ const ControlFeatures = () => {
           }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          <h2 className="text-4xl md:text-6xl text-slate-600 mb-4">
-            Real-Time Safety For Your Child
+          <h2 className="text-4xl md:text-5xl text-slate-600 mb-4">
+          Protect, Guide, Monitor – The Future of Parenting
           </h2>
 
           <p className="text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            Manage and monitor your child’s device with powerful remote-control
-            tools. Access live surroundings, track app usage, view activities,
-            and stay aware — even when the device isn’t with you. Everything you
-            need to protect your child’s digital and real-world safety is right
-            at your fingertips.
+          In this digital era, online crimes are increasingly being committed.
+          This may lead to them in a serious issue, like identity theft, cyberbullying, and online harassment. 
+          We understand this, and empower you with real-time mobile activity updates for your child.
           </p>
 
           <div className="mt-6 flex justify-center text-sm text-gray-500 ">

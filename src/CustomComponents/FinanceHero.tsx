@@ -27,7 +27,7 @@ const FinanceHero: React.FC<FinanceHeroProps> = ({
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:-mt-20">
             {/* LEFT: Text content with stagger */}
             <motion.div
-              className="flex-1 text-center lg:text-left"
+              className="flex-1 text-center lg:text-left mt-20"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.6 }}
@@ -55,7 +55,7 @@ const FinanceHero: React.FC<FinanceHeroProps> = ({
                 }}
                 className="text-3xl sm:text-4xl lg:text-5xl leading-tight text-slate-100 md:text-slate-300"
               >
-                Ready to Track Your{" "} <br/>
+                Ready to Track Your <br />
                 <span className="text-[#5e87e2]">Child Activities?</span>
               </motion.h1>
 
@@ -68,11 +68,20 @@ const FinanceHero: React.FC<FinanceHeroProps> = ({
                     transition: { duration: 1, ease: [0.22, 1, 0.36, 1] },
                   },
                 }}
-                className="mt-4 text-sm sm:text-base text-slate-100 md:text-slate-300 max-w-xl mx-auto lg:mx-0"
+                className="mt-4 text-sm sm:text-base text-slate-100 md:text-slate-300 text-justify max-w-xl mx-auto lg:mx-0"
               >
-                Protect your child from online risks with smart monitoring tools.
-                Track activities in real time, detect unsafe interactions, and
-                keep your child’s digital life safe and healthy.
+                The ion monitor is equipped with a powerful feature to empower
+                parents with peace of mind by ensuring their child’s digital
+                safety. It has multiple features that allow the parents to
+                discreetly monitor call logs, messages, social media chats, and
+                media files. It is staffed with features like GPS trackers
+                hidden call recorder, WhatsApp, and sms tracking features to
+                provide the parents the access to the digital activity carried
+                out by their child. This feature of the ion monitor operates
+                invisibly in the background of the target phone installed
+                without giving any hint to the child. By using the ion monitor,
+                parents get access to the contact details, timestamps, and the
+                call direction made by their child.
               </motion.p>
 
               <motion.div

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Star, Filter, Search, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,67 +20,80 @@ export interface ReviewPage {
   id: number;
   heading: string;
   paragraph: string;
-  pageRating: number;
-  listReview: ListReview[];
   createdAt: string;
   updatedAt: string;
 }
 
-// --------- DEMO DATA (no API) ----------
-const initialReviews: ListReview[] = [
-  {
-    id: 1,
-    review_pgaeId: 1,
-    name: "Rahul Sharma",
-    title: "Perfect for monitoring my kid’s phone",
-    rating: 5,
-    content:
-      "ION-MONITAR helped me keep track of my son’s online activity. The dashboard is clean and easy to understand.",
-    varified: true,
-    createdAt: "2025-11-15T10:00:00.000Z",
-  },
-  {
-    id: 2,
-    review_pgaeId: 1,
-    name: "Priya Verma",
-    title: "Very helpful & reliable",
-    rating: 4,
-    content:
-      "Live location and call logs are accurate. I feel much more relaxed knowing I can monitor in real time.",
-    varified: true,
-    createdAt: "2025-11-18T14:30:00.000Z",
-  },
-  {
-    id: 3,
-    review_pgaeId: 1,
-    name: "Amit Gupta",
-    title: "Good app, could be smoother",
-    rating: 4,
-    content:
-      "Features are great, but I’d love a slightly faster sync. Overall very useful and worth the money.",
-    varified: false,
-    createdAt: "2025-11-20T08:45:00.000Z",
-  },
-];
-
- 
+const REVIEWS_API_URL =
+  "https://webback.ionmonitor.com/api/review/frontendapi/userReview";
 
 const ReviewCompo = () => {
   const [filter, setFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
- 
-  const [reviews,  ] = useState<ListReview[]>(initialReviews);
+  const [reviews, setReviews] = useState<ListReview[]>([]);
+  const [pageInfo, setPageInfo] = useState<ReviewPage | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
- 
+  // ---------------- FETCH FROM API ----------------
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        setLoading(true);
+        setError(null);
 
+        const res = await fetch(REVIEWS_API_URL);
+
+        if (!res.ok) {
+          throw new Error(`Failed to load reviews (${res.status})`);
+        }
+
+        const data = await res.json();
+        console.log("API response:", data);
+
+        // reviews: data.page.listofreview
+        const reviewsFromApi: ListReview[] =
+          data?.page?.listofreview && Array.isArray(data.page.listofreview)
+            ? data.page.listofreview
+            : [];
+
+        setReviews(reviewsFromApi);
+
+        // page heading/paragraph: data.page.review[0]
+        if (
+          data?.page?.review &&
+          Array.isArray(data.page.review) &&
+          data.page.review.length > 0
+        ) {
+          const meta = data.page.review[0];
+          setPageInfo({
+            id: meta.id,
+            heading: meta.heading,
+            paragraph: meta.paragraph,
+            createdAt: meta.createdAt,
+            updatedAt: meta.updatedAt,
+          });
+        }
+      } catch (err: any) {
+        console.error("Error fetching reviews:", err);
+        setError("Unable to load reviews. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
+  // ---------------- FILTER + SEARCH ----------------
   const filteredReviews = useMemo(() => {
     return reviews.filter((review) => {
       const matchesFilter =
         filter === "all" ||
-        (filter === "5" && review.rating === 5) ||
-        (filter === "4" && review.rating === 4) ||
-        (filter === "3" && review.rating === 3) ||
-        (filter === "verified" && review.varified);
+        (filter === "5" && review.rating >= 4.5) || // treat 4.5+ as 5-star bucket
+        (filter === "4" && review.rating >= 3.5 && review.rating < 4.5) ||
+        (filter === "3" && review.rating >= 2.5 && review.rating < 3.5)
+      
 
       const search = searchTerm.toLowerCase();
       const matchesSearch =
@@ -92,14 +105,12 @@ const ReviewCompo = () => {
     });
   }, [filter, reviews, searchTerm]);
 
- 
-
   const renderStars = (rating: number, size: string = "w-4 h-4") => {
     return [...Array(5)].map((_, i) => (
       <Star
-        key={1}
+        key={i} // ✅ fixed key
         className={`${size} ${
-          i < rating ? "fill-amber-400 text-amber-400" : "text-gray-300"
+          i < Math.round(rating) ? "fill-amber-400 text-amber-400" : "text-gray-300"
         }`}
       />
     ));
@@ -107,9 +118,20 @@ const ReviewCompo = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Content Section */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Filters and Search */}
+        {/* Heading from API */}
+        {pageInfo && (
+          <div className="mb-8 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-50 mb-2">
+              {pageInfo.heading}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 max-w-2xl">
+              {pageInfo.paragraph}
+            </p>
+          </div>
+        )}
+
+        {/* Top: Search + Filters */}
         <div className="flex flex-col md:flex-row gap-4 mb-10">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
@@ -156,87 +178,94 @@ const ReviewCompo = () => {
               4 Stars
             </Button>
 
-            <Button
-              onClick={() => setFilter("verified")}
-              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-300 ${
-                filter === "verified"
-                  ? "bg-sky-500 text-white hover:bg-sky-600"
-                  : "bg-slate-900/80 text-slate-200 border border-slate-600 hover:bg-slate-800"
-              }`}
-            >
-              Verified Only
-            </Button>
           </div>
         </div>
 
+        {/* Loading / Error */}
+        {loading && (
+          <div className="text-center py-10 text-slate-400">
+            Loading reviews...
+          </div>
+        )}
+
+        {error && !loading && (
+          <div className="text-center py-10 text-red-400">{error}</div>
+        )}
+
         {/* Reviews Grid */}
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mb-10">
-          {filteredReviews.map((review) => (
-            <div
-              key={review.id}
-              className="relative overflow-hidden bg-gray-800 rounded-xl shadow-[0_18px_45px_rgba(0,0,0,0.9)] transition-all duration-300"
-            >
-              {/* Card Layout – Vertical on mobile, side-by-side on md+ */}
-              <div className="flex flex-col sm:flex-row h-full">
-                {/* LEFT – IMAGE */}
-                <div className="w-full sm:w-1/3">
-                  <img
-                    src="/UX3.jpg"
-                    alt="Customer review"
-                    className="w-full h-40 sm:h-full object-cover sm:rounded-l-xl rounded-t-xl sm:rounded-t-none"
-                    draggable="false"
-                  />
-                </div>
+        {!loading && !error && (
+          <>
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mb-10">
+              {filteredReviews.map((review) => (
+                <div
+                  key={review.id}
+                  className="relative overflow-hidden bg-gray-800 rounded-xl shadow-[0_18px_45px_rgba(0,0,0,0.9)] transition-all duration-300"
+                >
+                  <div className="flex flex-col sm:flex-row h-full">
+                    {/* LEFT – IMAGE */}
+                    <div className="w-full sm:w-1/3">
+                      <img
+                        src="/UX3.jpg"
+                        alt="Customer review"
+                        className="w-full h-40 sm:h-full object-cover sm:rounded-l-xl rounded-t-xl sm:rounded-t-none"
+                        draggable="false"
+                      />
+                    </div>
 
-                {/* RIGHT – TEXT CONTENT */}
-                <div className="w-full sm:w-2/3 flex flex-col p-4 sm:p-5">
-                  {/* NAME + RATING + DATE */}
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex-1">
-                        <p className="text-lg sm:text-xl font-semibold text-slate-50">
-                          {review.name}
-                        </p>
+                    {/* RIGHT – TEXT CONTENT */}
+                    <div className="w-full sm:w-2/3 flex flex-col p-4 sm:p-5">
+                      {/* NAME + RATING + DATE */}
+                      <div className="flex flex-col gap-2">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1">
+                            <p className="text-lg sm:text-xl font-semibold text-slate-50">
+                              {review.name}
+                            </p>
 
-                        <div className="flex items-center gap-2 mt-2">
-                          <div className="flex">
-                            {renderStars(review.rating, "w-4 h-4 sm:w-5 sm:h-5")}
+                            <div className="flex items-center gap-2 mt-2">
+                              <div className="flex">
+                                {renderStars(
+                                  review.rating,
+                                  "w-4 h-4 sm:w-5 sm:h-5"
+                                )}
+                              </div>
+                              <span className="text-sm sm:text-base text-slate-400">
+                                {review.rating.toFixed(1)} / 5
+                              </span>
+                            </div>
                           </div>
-                          <span className="text-sm sm:text-base text-slate-400">
-                            {review.rating.toFixed(1)} / 5
-                          </span>
+
+                          <div className="flex items-center text-slate-400 text-xs sm:text-sm whitespace-nowrap">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {format(new Date(review.createdAt), "dd/MM/yyyy")}
+                          </div>
                         </div>
                       </div>
 
-                      <div className="flex items-center text-slate-400 text-xs sm:text-sm whitespace-nowrap">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {format(new Date(review.createdAt), "dd/MM/yyyy")}
+                      {/* TITLE + CONTENT */}
+                      <div className="mt-3 space-y-1">
+                        <h4 className="text-slate-200 text-sm sm:text-base md:text-lg font-medium leading-snug line-clamp-2">
+                          {review.title}
+                        </h4>
+
+                        <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed line-clamp-4">
+                          {review.content}
+                        </p>
                       </div>
                     </div>
                   </div>
+                </div>
+              ))}
+            </div>
 
-                  {/* TITLE + CONTENT */}
-                  <div className="mt-3 space-y-1">
-                    <h4 className="text-slate-200 text-sm sm:text-base md:text-lg font-medium leading-snug line-clamp-2">
-                      {review.title}
-                    </h4>
-
-                    <p className="text-xs sm:text-sm text-slate-300/90 leading-relaxed line-clamp-4">
-                      {review.content}
-                    </p>
-                  </div>
+            {filteredReviews.length === 0 && (
+              <div className="text-center py-12">
+                <div className="text-slate-400 text-lg">
+                  No reviews found matching your criteria.
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredReviews.length === 0 && (
-          <div className="text-center py-12">
-            <div className="text-slate-400 text-lg">
-              No reviews found matching your criteria.
-            </div>
-          </div>
+            )}
+          </>
         )}
       </div>
     </div>
