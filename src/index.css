@@ -154,3 +154,278 @@
   animation: testimonials-marquee 30s linear infinite;
 }
 
+
+
+
+
+.prose {
+  overflow-wrap: anywhere;   /* modern */
+  word-wrap: break-word;     /* legacy fallback */
+}
+
+/* Blog Content Wrapper */
+.prose {
+  max-width: 95%;
+  margin: 0 auto;
+  font-family: "Georgia", "Times New Roman",  ;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: white;
+}
+
+/* Headings */
+.prose h1 {
+  font-size: 1.5rem;
+  font-weight: semibold;
+  margin: 2rem 0 1rem;
+
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.prose p {
+  margin: 1rem 0;
+
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  margin: 1.25rem 0 1.25rem 2rem;
+  padding-left: 1.25rem;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+/* Strong / Bold */
+.prose strong {
+  font-weight: 700;
+  color:white;
+}
+
+/* Links */
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  display: inline;          
+  white-space: normal;      
+  overflow-wrap: anywhere;   
+  word-break: break-word;   
+  hyphens: auto;             
+}
+
+
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+/* Images */
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+}
+
+/* Figures */
+.prose figure {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.prose figcaption {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Code blocks */
+.prose pre {
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+}
+
+/* Inline code */
+.prose p code {
+  background: #f1f5f9;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: #ef4444;
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* Spacing for conclusion & SEO keywords */
+.prose ul:last-child {
+  margin-bottom: 3rem;
+}
+
+
+
+
+.installationProcess {
+  max-width: 95%;
+  margin: 0 auto;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: white;
+}
+
+
+
+.installationProcess h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+
+}
+
+.installationProcess h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+}
+
+.installationProcess h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.installationProcess h4,
+.installationProcess h5,
+.installationProcess h6 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.installationProcess p {
+  margin: 1rem 0;
+  font-size: x-small;  
+}
+
+
+@media (min-width: 640px) {
+  .installationProcess {
+    padding-inline: 1.25rem;
+  }
+
+  .installationProcess p {
+    margin: 1rem 0;
+    font-size:larger;  
+
+  }
+
+  .installationProcess ul,
+  .prose ol {
+    margin-left: 1.5rem;
+  }
+
+  .installationProcess pre {
+    padding: 1rem;
+  }
+
+  .installationProcess img,
+  .prose figure {
+    margin: 1.25rem auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .installationProcess {
+    padding-inline: 0;
+  }
+
+  /* already centered and capped */
+  .installationProcess h1 {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .installationProcess h2 {
+    font-size: 1.7rem;
+    margin: 1.75rem 0 0.9rem;
+  }
+
+  .installationProcess pre {
+    margin: 1.5rem 0;
+  }
+  .installationProcess pre {
+      font-size: x-large;  
+
+  }
+
+  .prose h1 {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    font-size: 2.25rem;
+
+  }
+
+  .prose h2 {
+    font-size: 1.75rem;
+
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+
+  }
+
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-size: 1.25rem;
+
+  }
+
+}

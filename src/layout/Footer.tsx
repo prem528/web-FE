@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+const moreLinks = [
+  { label: "Make in India", href: "/" },
+  { label: "Alternate Payment", href: "/" },
+  { label: "Banking Details", href: "/" },
+  { label: "F.A.Q.", href: "/" },
+  { label: "Installation Guide", href: "/installation-guide" },
+];
+
+const legalPolicies = [
+  { label: "Cookie Policy", href: "/cookie-policy" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Refund Policy", href: "/refund-policy" },
+  { label: "Terms & Conditions", href: "/terms&conditions" },
+];
+
 const Footer: React.FC = () => {
   const [showFullDisclaimer, setShowFullDisclaimer] = useState(false);
 
@@ -13,9 +28,9 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
     <footer className="relative py-8 px-4 sm:px-6 bg-[url('/topbg10.avif')] bg-cover overflow-hidden bg-black">
       {/* MAIN CONTENT */}
       <div className="relative max-w-7xl mx-auto z-10 mb-20">
-        {/* Top grid – always 2 columns on small, then 3/5 on larger screens */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 mb-12 mt-10 sm:mt-16">
-          {/* Quick Links */}
+        {/* Top grid – always 2 columns on small, then 3/4 on larger screens */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 mt-10 sm:mt-16">
+          {/* Contact Details */}
           <div>
             <motion.h3
               className="text-gray-400 font-semibold text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6"
@@ -27,27 +42,50 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
               }}
               viewport={{ once: true, amount: 0.6 }}
             >
-              Quick Links
+              Contact Us
             </motion.h3>
-            <ul className="space-y-1.5 sm:space-y-2.5 text-gray-500 text-xs sm:text-sm md:text-base">
-              {[
-                "About Us",
-                "Buy Now",
-                "Compatibility",
-                "Contact Us",
-                "Employee Tracking",
-                "Family Tracking",
-                "Features",
-              ].map((link) => (
-                <li key={link}>
-                  <button
-                    type="button"
-                    className="hover:underline hover:text-gray-900 transition-colors text-left"
-                  >
-                    {link}
-                  </button>
-                </li>
-              ))}
+            <ul className="space-y-1.5 sm:space-y-1.5 text-gray-400 text-xs sm:text-sm md:text-base">
+              <li>
+                <span className="block font-semibold text-gray-300">
+                  Email:
+                </span>
+                <a
+                  href="mailto:support@ionmonitor.com"
+                  className="hover:underline hover:text-gray-100 break-all"
+                >
+                  support@ionmonitor.com
+                </a>
+              </li>
+              <li>
+                <span className="block font-semibold text-gray-300">
+                  Phone:
+                </span>
+                <a
+                  href="tel:+919999999999"
+                  className="hover:underline hover:text-gray-100"
+                >
+                  +91 99999 99999
+                </a>
+              </li>
+              <li>
+                <span className="block font-semibold text-gray-300">
+                  WhatsApp:
+                </span>
+                <a
+                  href="https://wa.me/919999999999"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:underline hover:text-gray-100"
+                >
+                  +91 99999 99999
+                </a>
+              </li>
+              <li>
+                <span className="block font-semibold text-gray-300">
+                  Support Hours:
+                </span>
+                <p>Mon – Sat, 10:00 AM – 7:00 PM IST</p>
+              </li>
             </ul>
           </div>
 
@@ -66,56 +104,14 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
               More Links
             </motion.h3>
             <ul className="space-y-1.5 sm:space-y-2.5 text-gray-500 text-xs sm:text-sm md:text-base">
-              {[
-                "Make in India",
-                "Alternate Payment",
-                "Banking Details",
-                "F.A.Q.",
-                "Installation Guide",
-                "Testimonials",
-              ].map((link) => (
-                <li key={link}>
-                  <button
-                    type="button"
-                    className="hover:underline hover:text-gray-900 transition-colors text-left"
+              {moreLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="hover:underline hover:text-gray-100 transition-colors text-left inline-block"
                   >
-                    {link}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Use Cases */}
-          <div>
-            <motion.h3
-              className="text-gray-400 font-semibold text-base sm:text-xl md:text-2xl mb-3 sm:mb-4 md:mb-6"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1.4,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              viewport={{ once: true, amount: 0.6 }}
-            >
-              Use Cases
-            </motion.h3>
-            <ul className="space-y-1.5 sm:space-y-2.5 text-gray-500 text-xs sm:text-sm md:text-base">
-              {[
-                "Android Tracking",
-                "Call Recorder",
-                "Facebook Tracking",
-                "Instagram Tracking",
-                "Mobile Tracking",
-                "Tinder Tracking",
-              ].map((link) => (
-                <li key={link}>
-                  <button
-                    type="button"
-                    className="hover:underline hover:text-gray-900 transition-colors text-left"
-                  >
-                    {link}
-                  </button>
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -136,19 +132,14 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
               Legal Policies
             </motion.h3>
             <ul className="space-y-1.5 sm:space-y-2.5 text-gray-500 text-xs sm:text-sm md:text-base">
-              {[
-                "Cookie Policy",
-                "Privacy Policy",
-                "Refund Policy",
-                "Terms of Usage",
-              ].map((link) => (
-                <li key={link}>
-                  <button
-                    type="button"
-                    className="hover:underline hover:text-gray-900 transition-colors text-left"
+              {legalPolicies.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="hover:underline hover:text-gray-100 transition-colors text-left inline-block"
                   >
-                    {link}
-                  </button>
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -240,10 +231,11 @@ it may result in severe penalties (monetary & criminal) imposed on the violator.
       <motion.div className="pointer-events-none absolute inset-0 flex items-end justify-center pb-4  sm:pb-2 md:pb-0 opacity-50 sm:opacity-15 md:opacity-20 select-none z-0">
         <h1
           className="
-            font-extrabold text-white tracking-tight blur-[1.5px] leading-none
+            font-extrabold text-white tracking-tight blur-[2.5px] leading-none
             whitespace-nowrap text-center
             text-[clamp(40px,14vw,180px)]
-          ">
+          "
+        >
           ION MONITOR
         </h1>
       </motion.div>

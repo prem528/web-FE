@@ -1,4 +1,4 @@
-import Footer from "@/layout/Footer";
+
 import HeroSection from "./HeroSection";
 import ReviewCompo from "./ReviewCompo";
  
@@ -14,7 +14,6 @@ export default function Review() {
         <RatingSummary />
         <ReviewSection/>
         <ReviewCompo />
-        <Footer />
       </GradientBackground>
     </div>
   );

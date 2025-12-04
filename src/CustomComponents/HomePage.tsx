@@ -1,5 +1,4 @@
 import { Suspense, lazy } from "react";
-import Footer from "@/layout/Footer";
 import ControlFeatures from "./featureSection";
 import FeatureshowCase from "./featureShowCase";
 import FinanceHero from "./FinanceHero";
@@ -156,7 +155,7 @@ export default function HomePage() {
       <InsightsSections />
       <Testimonials />
       <RatingSummary />
-      <Footer />
+  
     </GradientBackground>
   );
 }
