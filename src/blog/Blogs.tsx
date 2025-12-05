@@ -135,7 +135,7 @@ const Blogs = () => {
       {/* Header */}
       <header>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mt-8">
-          <h1 className="text-4xl font-semibold text-gray-300 text-center">
+          <h1 className="text-4xl font-semibold text-gray-400 text-center">
             Mobile Security & Parenting Blog
           </h1>
           <p className="text-muted-foreground mt-2 text-center">

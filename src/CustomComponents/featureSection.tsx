@@ -5,7 +5,6 @@ import {
   Mic,
   Phone,
   Search,
-  FullscreenIcon,
   Video,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";

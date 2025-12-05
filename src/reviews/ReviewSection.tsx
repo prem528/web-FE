@@ -23,7 +23,7 @@ const ReviewSection = () => {
           viewport={{ once: true, amount: 0.35 }}
         >
           {/* Left side card */}
-          <div className="relative">
+          <div className="relative p-3 lg:p-1">
             <div className="relative overflow-hidden rounded border border-slate-200">
               <img
                 src="/feedback.jpg"
@@ -34,7 +34,7 @@ const ReviewSection = () => {
           </div>
 
           {/* Right side card  */}
-          <div>
+          <div className="p-3 lg:p-1">
             <ReviewForm onReviewSubmit={handleReviewSubmit} />
           </div>
         </motion.div>

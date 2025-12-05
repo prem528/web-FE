@@ -46,7 +46,7 @@ const Navbar = () => {
       {/* 🔹 Navbar just below TopBar, adjusts position based on TopBar visibility */}
       <nav
         className={`fixed left-2 right-2 z-40 backdrop-blur bg-slate-800/10 rounded-xl shadow-md lg:py-2 transition-all duration-700 ${
-          showTopBar ? "top-14" : "top-2"
+          showTopBar ? "top-10" : "top-2"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
@@ -119,7 +119,7 @@ const Navbar = () => {
             {/* Right side buttons */}
             <div className="hidden lg:flex items-center space-x-8">
               <Button className="bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-medium rounded-md text-lg transition-all duration-300 cursor-pointer">
-                Try now
+              <Link to="https://demo.ionmonitor.com">Try now</Link>
               </Button>
 
               <Button
@@ -157,6 +157,20 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
               >
                 Review
+              </Link>
+              <Link
+                to="/installation-guide"
+                className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Installation Guide
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-300 hover:text-white px-3 py-2 text-base font-medium transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Blogs
               </Link>
               <Link
                 to="https://dash.ionmonitor.com/user/login"

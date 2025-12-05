@@ -23,7 +23,7 @@ const FeaturesSection = () => {
           viewport={{ once: true, amount: 0.35 }}
         >
           {/* Left side card */}
-          <div className="relative">
+          <div className="relative p-3">
             <div className="relative overflow-hidden rounded border border-slate-200">
               <img
                 src="/customer.jpg"

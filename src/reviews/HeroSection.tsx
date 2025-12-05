@@ -4,7 +4,7 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden text-white bg-[url('/square.svg')] bg-black bg-cover mt-20  ">
+    <section className="relative overflow-hidden text-white bg-[url('/square.svg')] bg-black bg-cover lg:mt-20 mt-32">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
                       flex flex-col md:flex-row     /* ← FIXED HERE */
                       items-center justify-between 

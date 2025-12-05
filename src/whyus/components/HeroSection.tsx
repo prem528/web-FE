@@ -4,7 +4,7 @@ const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
 
 const HeroSection = () => {
   return (
-    <section className="text-white relative overflow-hidden bg-[url('/square.svg')] bg-black bg-cover">
+    <section className="text-white relative overflow-hidden bg-[url('/square.svg')] bg-black bg-cover mt-10 lg:mt-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center relative z-10">
           {/* Left content – smooth fade/slide up */}

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 type Logo = {
   id: string;
@@ -30,33 +29,6 @@ const logosRow2: Logo[] = [
   { id: "r2-9", label: "Snapchat", iconSrc: "/snapchat.png" },
   { id: "r2-10", label: "Skype", iconSrc: "/skype.png" },
 ];
-
-const SOFT_EASE = [0.25, 1, 0.3, 1] as [number, number, number, number];
-
-const fadeParent = {
-  hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.4,
-      ease: SOFT_EASE,
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const fadeChild = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.1,
-      ease: SOFT_EASE,
-    },
-  },
-};
 
 const LogoPill: React.FC<{ logo: Logo }> = ({ logo }) => (
   <div className="inline-flex items-center gap-2 rounded-2xl bg-white/70 px-5 py-3 text-slate-700 ring-1 ring-black/5 shadow-sm">
@@ -102,57 +74,32 @@ export default function FeatureShowCase() {
   return (
     <section className="w-full bg-[url('/topbg10.avif')] bg-cover pt-10 bg-[#020512]">
       <div className="mx-auto max-w-[1400px]">
-        {/* Card with soft, light pop-in */}
-        <motion.div
-          className="relative overflow-hidden rounded-[28px] p-6 sm:p-10 md:p-34 ring-1 ring-black/1 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.25)]"
-          initial={{ opacity: 0, y: 40, scale: 0.97 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            duration: 1.5,
-            ease: SOFT_EASE,
-          }}
-          viewport={{ once: true, amount: 0.4 }}
-        >
-          {/* Header with smooth, light stagger */}
-          <motion.div
-            className="mx-auto max-w-3xl text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.6 }}
-            variants={fadeParent}
-          >
-            <motion.span
-              variants={fadeChild}
-              className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1 text-lg font-semibold tracking-widest text-slate-700 ring-1 ring-black/5 shadow-sm"
-            >
+        {/* Static card – no scroll animation */}
+        <div className="relative overflow-hidden rounded-[28px] p-6 sm:p-10 md:p-34 ring-1 ring-black/1 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.25)]">
+          {/* Header */}
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center justify-center rounded-full bg-white px-4 py-1 text-lg font-semibold tracking-widest text-slate-700 ring-1 ring-black/5 shadow-sm">
               CHILD MONITORING
-            </motion.span>
+            </span>
 
-            <motion.h2
-              variants={fadeChild}
-              className="mt-6 text-4xl sm:text-6xl md:text-6xl tracking-tight text-slate-600"
-            >
+            <h2 className="mt-6 text-4xl sm:text-6xl md:text-6xl tracking-tight text-slate-600">
               Advanced Child Monitoring
               <br /> Keep Your Kids Safe.
-            </motion.h2>
+            </h2>
 
-            <motion.p
-              variants={fadeChild}
-              className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-slate-500"
-            >
+            <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-slate-500">
               Monitor calls, messages, social media, photos, videos, and
               location history in real time. Smart insights designed to keep
               your child safe and digitally healthy.
-            </motion.p>
+            </p>
 
-            <motion.button
-              variants={fadeChild}
+            <button
               type="button"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-900 ring-1 ring-black/10 shadow-sm hover:bg-slate-50"
             >
               Explore Features
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
 
           {/* Logos – marquee */}
           <div className="mt-10 -mx-10 lg:-mx-30 mb-4">
@@ -161,7 +108,7 @@ export default function FeatureShowCase() {
               <LogoRow logos={logosRow2} direction="right" />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

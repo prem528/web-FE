@@ -63,7 +63,7 @@ const BlogArticlePage = () => {
           <main className="w-full border rounded-lg">
             {/* Feature image */}
             {imageData && (
-              <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl shadow-2xl mt-5">
+              <div className="relative mx-auto w-full max-w-3xl aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl mt-5">
                 <img
                   src={imageData.sourceUrl}
                   alt="blog feature"

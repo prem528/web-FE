@@ -18,7 +18,7 @@ const BlogCard = ({ title, date, image, href }: BlogCardProps) => {
         to={href}
         className="block relative rounded-xl overflow-hidden shadow-elegant hover:shadow-hover transform hover:-translate-y-2 transition-all duration-300"
       >
-        <div className="relative overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           {cover ? (
             <img
               src={cover.sourceUrl}
